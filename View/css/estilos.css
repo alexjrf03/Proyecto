@@ -1,0 +1,420 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(../img/fondo2.jpg) no-repeat center top;
+    background-size: cover;
+    font-family: sans-serif;
+}
+
+/* Login */
+
+.titulo{
+    font-size: 60px;
+    text-align: center;
+    color: white;
+}
+
+.login_caja{
+    width: 320px;
+    height: 420px;
+    background: rgba(0,0,0,0.8);
+    color: rgb(255,255,255);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    box-shadow: 0px 0px 10px black;
+    border-radius: 10px;
+    
+}
+
+.img-logo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -12%;
+    left: calc(50% - 50px);
+}
+
+.login_caja h1{
+    text-align: center;
+}
+
+.login_caja h1 span{
+    color: #27F3ED;
+}
+
+.label{
+    font-size: 18px;
+    color: white;
+}
+
+.campo{
+    margin-left: 2px;
+    width: 91%;
+    padding: 8px;
+    border-radius: 5px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #27F3ED;
+    color: rgb(255,255,255);
+    outline: none;
+}
+
+.boton{
+    padding: 8px;
+    background: #1EDDDD;
+    color: rgb(255,255,255);
+    margin-left: 77px;
+    border-radius: 5px;
+    border-color: #1EDDDD;
+    font-size: 14px;
+    outline: none;
+}
+
+.boton:hover{
+    background: #0EFFFF;
+    
+}
+
+.link_cuenta{
+    color: darkgrey;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 83px;
+}
+
+.link_cuenta:hover{
+    color: white;
+}
+
+/* Cambio Contraseña */
+
+.cuenta_caja{
+    width: 320px;
+    height: 450px;
+    background: rgba(0,0,0,0.8);
+    color: rgb(255,255,255);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    box-shadow: 0px 0px 10px black;
+    border-radius: 10px;
+}
+
+.cuenta_caja h1{
+    text-align: center;
+}
+
+.cuenta_caja h1 span{
+    color: #27F3ED;
+}
+
+.img_clave{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    position: absolute;
+    top: -12%;
+    left: calc(50% - 50px);
+    
+}
+
+.boton2{
+    padding: 8px;
+    background: #1EDDDD;
+    color: rgb(255,255,255);
+    outline: none;
+    font-size: 14px;
+    border-color: #27F3ED;
+    border-radius: 5px;
+    margin-left: 93px;
+}
+
+.boton2:hover{
+    background: #0EFFFF;
+}
+
+.link_inicio{
+    color: darkgrey;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 80px;
+    
+}
+
+.link_inicio:hover{
+    color: white;
+}
+
+
+
+
+
+
+/* Menu */
+
+header {
+    margin: auto;
+    width: 1200px;
+    height: 130px;
+    background-color: aqua;
+}
+
+div.contenedor {
+    
+    width: 200px;
+    height: 130px;
+    float: left;
+}
+
+div#uno{
+    background-color: rgb(215,0,0);
+    outline: none;
+}
+
+div#dos{
+    background-color: rgb(180,10,10);
+    outline: none;
+}
+
+div#tres{
+    background-color: rgb(130,10,10);
+    outline: none;
+}
+
+div#cuatro{
+    background-color: rgb(170,170,170);
+    outline: none;
+}
+
+div#cinco{
+    background-color: rgb(100,100,100);
+    outline: none;
+}
+
+div#seis{
+    background-color: rgb(0,0,0);
+    outline: none;
+}
+
+.icono{
+    display: block;
+    margin: auto;
+    margin-top: 25px;
+    background-color: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    -webkit-box-shadow: 0px,0px,0px,30px rgba(255,255,255,1);
+}
+
+.texto{
+    margin: auto;
+    text-align: center;
+    color: rgb(255,255,255);
+    font-size: 1.1em;
+    opacity: .6;
+}
+
+.contenedor:hover{
+    height: 150px;
+}
+
+.contenedor:hover .texto{
+    padding-top: 30px;
+    opacity: 1;
+}
+
+.nomb_usuario{
+    margin-top: 100px;
+    text-align: center;
+    color: rgb(255,255,255);
+}
+
+
+/* Registro de Usuarios */
+
+ table{
+    margin-top: 180px;
+    margin-left: 490px;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.fondo_campos{
+    background: rgba(0,0,0,0.1);
+    border-bottom: 1px solid red;
+    color: white;
+    
+}
+.campo2{
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: rgb(255,255,255);
+    outline: none;
+    background: rgba(0,0,0,0.4);
+}
+
+.campo_desplegable{
+    background: rgba(0,0,0,0.4);
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: rgb(255,255,255);
+    
+    
+}
+
+.encabezado{
+    color: white;
+    background: rgba(0,0,0,0.4);
+    border-bottom: 1px solid red;
+    
+}
+
+.boton_registro{
+    padding: 8px;
+    background: rgb(155,10,10);
+    color: rgb(255,255,255);
+    outline: none;
+    font-size: 14px;
+    border-color: rgb(0,0,0);
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+.boton_registro:hover{
+    background: red;
+}
+
+.link_menu{
+    text-decoration: none;
+    color: darkgrey;
+    margin-left: 800px;
+    
+}
+
+.link_menu:hover{
+    color: white;
+}
+
+/* Consulta de Usuarios */
+
+.titulo_consulta{
+    color: white;
+    text-align: center;
+    font-size: 50px;
+}
+
+span{
+    color: red;
+}
+
+.titulo_usuario{
+    background: rgba(0,0,0,0.4);
+    color: rgb(255,255,255);
+    padding: 10px;
+    text-align: center;
+    font-size: 25px;
+    border-bottom: 1px solid red;
+    border-radius: 10px;
+}
+
+.campo_consulta{
+    background: rgba(0,0,0,0.4);
+    color: rgb(255,255,255);
+    padding: 40px;
+    font-size: 20px;
+    border-bottom: 1px solid red;
+    border-radius: 10px;
+}
+
+.tabla_consulta{
+    margin-left: -180px;
+    margin-bottom: 100px;
+    
+}
+
+.link_menu2{
+     text-decoration: none;
+    color: darkgrey;
+    margin-left: 1000px;
+}
+.link_menu2:hover{
+    color: white;
+}
+
+/* Registro de Sistemas */
+
+.titulo_sistema{
+    background: rgba(0,0,0,0.3);
+    color: rgb(255,255,255);
+    padding: 10px;
+    text-align: center;
+    font-size: 25px;
+    border-bottom: 1px solid red;
+    border-radius: 10px;
+}
+
+.campo_sistemas{
+    background: rgba(0,0,0,0.4);
+    border-bottom: 1px solid red;
+    color: white;
+    
+}
+
+.datatable_sistemas{
+    margin-left: -90px;
+}
+
+.boton_sistema{
+    padding: 8px;
+    background: rgb(155,10,10);
+    color: rgb(255,255,255);
+    outline: none;
+    font-size: 14px;
+    border-color: rgb(0,0,0);
+    border-radius: 5px;
+    margin-left: 190px;
+}
+
+.boton_sistema:hover{
+    background: red;
+}
+
+/* Muestra de Registro Usuarios */
+
+.datatable_muestra_usuarios{
+    
+    margin-left: 50px;
+    
+}
+
+.encabezado_muestra_usuario{
+    padding: 5px;
+    color: white;
+    border-bottom: 1px solid red;
+    background: rgba(0,0,0,0.1);
+}
+
+.fondo_campos_muestra_usuarios{
+    padding: 5px;
+    color: white;
+    border-bottom: 1px solid red;
+    background: rgba(0,0,0,0.4);
+}
+
+/* Consulta de Sistemas */
+
+.tabla_consulta_sistemas{
+    margin-left: -265px;
+}
