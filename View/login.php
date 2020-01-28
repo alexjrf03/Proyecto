@@ -16,7 +16,7 @@
             
             <h1><span>L</span>ogin</h1>
             
-            <form action="form_dos.html" method="post">
+            <form action="home.php" method="post">
                
                 <!-- Usuario -->   
                 <label for="usuario" class="label">Usuario</label>

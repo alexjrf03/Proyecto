@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="css/est_form.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
     
@@ -118,10 +119,41 @@
                 </section>
               </section>
               
-              <?php
+              <div class="footer" id="contacto">
+              <h4 data-ix="slowfade-scroll-bigs">
+                <?php 
+                  
+                  if (isset($_GET['form'])) {
+                    if ($_GET["form"] == "lenguaje") {
+                      echo "Lenguaje";
+                    } elseif ($_GET["form"] == "base_datos") {
+                      echo "Base de datos";
+                    } 
+                  } else {
+                      echo 'Aplicación'; 
+                  }
 
-              include'form/aplicacion.php';
+                ?>
+              </h4>
+              <div class="container">
+              <form action="enviar.php" method="post">
+                <?php
+                  if (isset($_GET['form'])) {
 
-              ?>
+                    if ($_GET["form"] == "lenguaje" ||$_GET["form"] == "base_datos") {
+                      include "form/".$_GET["form"].".php";
+                    }
+                    
+                  } else {
+                    include'form/aplicacion.php';
+                  }              
+
+                ?>
+              </form>
+            </div>
+          </div>
+
+          <script src="js/bootstrap.js"></script>
+
 </body>
 </html>

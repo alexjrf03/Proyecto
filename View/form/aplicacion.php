@@ -1,8 +1,10 @@
-<div class="footer" id="contacto">
-    <h4 data-ix="slowfade-scroll-bigs">Aplicación</h4>
-    <div class="container">
-    <form action="enviar.php" method="post">
-      <ul class="flex-outer">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-8">
+          <ul class="flex-outer">
         <li>
           <label for="nombre">Nombre</label>
           <input type="text" name="nombre" placeholder="Ingresa Nombre" class=" campo" required>
@@ -40,9 +42,11 @@
           <textarea rows="6" name="mensaje" class="rect campo" required></textarea>
         </li>
         <li class="center">
-          <button type="submit">Siguente</button>
+          <button type="button"><a href="home.php?form=base_datos">Siguente</a></button>
         </li>
       </ul>
-    </form>
-  </div>
-  </div>
+          </div>
+        
+        </div>
+    
+      </div>
