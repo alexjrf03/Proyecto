@@ -70,7 +70,7 @@ body{
   color: #FEFFFF;
 }
 
-label{
+/* label{
   margin: 0 20px 0 0;
   font-size: 26px;
   line-height: 70px;
@@ -78,7 +78,7 @@ label{
   width: 26px;
   float: right;
   color: #354757;
-}
+} */
 
 #toggle{
   display: none;
@@ -320,7 +320,7 @@ ul li p{
   width: 90%;
   max-width: 1400px;
   margin: 0 auto;
-  margin-top: -35px;
+  margin-top: 0px;
   margin-bottom: 40px;
 }
 
@@ -481,25 +481,25 @@ ul li p{
   resize: none;
 }
 
-.flex-outer li button{
+/* .flex-outer li button{
   background: 0 0 #FEFFFF;
   border: 1px solid #27F3ED;
   border-radius: 3px;
   color: #27F3ED;
   font-size: 16px;
-  line-height: inherit;
+  line-height: inherit;ff
   margin: 30px 0;
   padding: 10px 50px;
   text-transform: uppercase;
   transition: all 0.25s ease 0s;
-}
+} */
 
-.flex-outer li button:hover,
+/* .flex-outer li button:hover,
 .flex-outer li button:active,
 .flex-outer li button:focus {
 	border-color: #299FFF;
 	color: #299FFF;
-}
+} */
 
 .flex-inner li{
   width: 100px;

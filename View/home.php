@@ -135,25 +135,32 @@
 
                 ?>
               </h4>
-              <div class="container">
-              <form action="enviar.php" method="post">
-                <?php
-                  if (isset($_GET['form'])) {
 
-                    if ($_GET["form"] == "lenguaje" ||$_GET["form"] == "base_datos") {
-                      include "form/".$_GET["form"].".php";
-                    }
-                    
-                  } else {
-                    include'form/aplicacion.php';
-                  }              
+              <div class="container"> 
+                 
+                    <form action="enviar.php" method="post">
+                      <?php
+                        if (isset($_GET['form'])) {
+                              
+                        if ($_GET["form"] == "lenguaje" || $_GET["form"] == "base_datos") {
+                          include "form/".$_GET["form"].".php";
+                        }
 
-                ?>
-              </form>
+                      } else {
+                        include'form/aplicacion.php';
+                      }              
+
+                    ?>
+                </form>
+              
             </div>
-          </div>
 
-          <script src="js/bootstrap.js"></script>
+            <br>
 
+<?php
+  include'footer.php';
+?>
+
+<script src="js/bootstrap.js"></script>
 </body>
 </html>
