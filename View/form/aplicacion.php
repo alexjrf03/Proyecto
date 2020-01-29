@@ -10,8 +10,8 @@
 
       <div class="from-group"> 
         
-          <label for="descripcion">Descripción</label>
-          <input type="text" name="descripcion" placeholder="Usuario Final" class="form-control" required>
+          <label for="usuario-final">Usuario Final</label>
+          <input type="text" name="usuario-final" placeholder="Usuario Final" class="form-control" required>
         
       </div>
 
@@ -24,15 +24,15 @@
 
       <div class="from-group">
         
-          <label for="url">URL</label>
-          <input type="text" name="url" placeholder="Ingresa URL" class="form-control" required>
+          <label for="uso">Uso</label>
+          <input type="text" name="uso" placeholder="Ingresa Uso" class="form-control" required>
         
       </div>
 
       <div class="from-group">
         
-          <label for="url">URL</label>
-          <input type="text" name="url" placeholder="Ingresa URL" class="form-control" required>
+          <label for="archivo-conex">Archivo de Conexión</label>
+          <input type="text" name="archivo-conex" placeholder="Ingresa Archivo Conexión" class="form-control" required>
         
       </div>
 
@@ -44,28 +44,28 @@
 <div class="col-6">
 <div class="from-group">
         
-        <label for="url">URL</label>
-        <input type="text" name="url" placeholder="Ingresa URL" class="form-control" required>
+        <label for="firmas">Manejo de Firmas</label>
+        <input type="text" name="firmas" placeholder="Ingresa Manejo de Firmas" class="form-control" required>
       
     </div>
       <div class="from-group">
         
-          <label for="url">URL</label>
-          <input type="text" name="url" placeholder="Ingresa URL" class="form-control" required>
+          <label for="adjuntos">Archivos Adjuntos</label>
+          <input type="text" name="adjuntos" placeholder="Ingresa Archivo Adjunto" class="form-control" required>
         
       </div>
 
       <div class="from-group">
         
-          <label for="url">URL</label>
-          <input type="text" name="url" placeholder="Ingresa URL" class="form-control" required>
+          <label for="autenticacion">Método de Autenticación</label>
+          <input type="text" name="autenticacion" placeholder="Describe Método de Autenticación" class="form-control" required>
         
       </div>
 
       <div class="from-group">
         
-          <label for="mensaje">Mensaje</label>
-          <textarea rows="4" name="mensaje" class="form-control" required></textarea>
+          <label for="mensaje">Descripción</label>
+          <textarea rows="4" name="descripcion" class="form-control" required></textarea>
         
       </div> 
   
