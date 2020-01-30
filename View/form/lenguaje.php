@@ -1,25 +1,24 @@
+<div class="row">
+    <div class="col-6">
 
-      <ul class="flex-outer">
-        <li>
-          <label for="nombre">Nombre</label>
-          <input type="text" name="nombre" placeholder="Ingresa Nombre" class=" campo" required>
-        </li>
-        <li>
-          <label for="descripcion">Descripción</label>
-          <input type="text" name="descripcion" placeholder="Usuario Final" class="rect campo" required>
-        </li>
-       
-        <li>
-          <label for="url">URL</label>
-          <input type="text" name="url" placeholder="Ingresa URL" class="rect campo" required>
-        </li>
-        <li>
-          <label for="url">URL</label>
-          <input type="text" name="url" placeholder="Ingresa URL" class="rect campo" required>
-        </li>
-       
-          
-      <li class="center">
-        <button type="submit">Enviar</button>
-      </li>
-      </ul>
+        <div class="from-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" placeholder="Ingresa el nombre del lenguaje" class="form-control" required>
+        </div>
+    </div>
+
+    <div class="col-6">
+      <div class="from-group">
+        <label for="">Versión</label>
+        <input type="text" name="" placeholder="Describa la versión del lenguaje" class="form-control" required>
+      
+      </div>
+    </div>
+
+    <div class="col-12 text-center mt-5 mb-4">
+            
+      <a class="btn btn-info" href="home.php">Volver</a>
+      <a class="btn btn-success" href="home.php?form=base_datos">Siguente</a>                
+
+    </div>
+</div>

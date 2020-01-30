@@ -76,7 +76,9 @@
                       echo "Lenguaje";
                     } elseif ($_GET["form"] == "base_datos") {
                       echo "Base de datos";
-                    } 
+                    } elseif ($_GET["form"] == "proveedor") {
+                      echo "Proveedor";
+                    }
                   } else {
                       echo 'Aplicación'; 
                   }
@@ -88,9 +90,13 @@
                  
                     <form action="enviar.php" method="post">
                       <?php
+
+                        $id = '';
+                        
                         if (isset($_GET['form'])) {
-                              
-                        if ($_GET["form"] == "lenguaje" || $_GET["form"] == "base_datos") {
+                          $id = $_GET['id'];
+                          echo $id;      
+                        if ($_GET["form"] == "lenguaje" || $_GET["form"] == "base_datos" || $_GET["form"] == "lenguaje" || $_GET["form"] == "proveedor") {
                           include "form/".$_GET["form"].".php";
                         }
 
@@ -113,5 +119,12 @@
 
 
 <script src="js/bootstrap.js"></script>
+<script>
+ function direccionamiento(){
+   alert("hola");
+   var id = "hola";
+   console.log(id);
+ }
+</script>
 </body>
 </html>
