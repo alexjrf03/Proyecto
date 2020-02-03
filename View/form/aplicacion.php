@@ -1,5 +1,4 @@
-
- <div class="row">
+<div class="row">
     <div class="col-6">
 
         <div class="from-group">
@@ -69,8 +68,7 @@
     </div>
 
     <div class="col-12 text-center mt-3">
-            
-            <br><a class="btn btn-success" href="home.php?form=lenguaje&id=registrar" onclick="direccionamiento()">Siguente</a>
+            <br><a class="btn btn-success" href="home.php?form=lenguaje">Siguente</a>
 
     </div>
    

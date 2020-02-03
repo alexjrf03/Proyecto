@@ -45,21 +45,21 @@
                     <section class="portafolio-item">
                       <img src="https://unsplash.it/400/430?image=490" alt="" class="portafolio-img" />
                       <section class="portafolio-text">
-                        <h5>genialidea</h5>
+                        <h5>tITULO</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus doloremque, error nostrum tempora sapiente corporis.</p>
                       </section>
                     </section>
                     <section class="portafolio-item">
                       <img src="https://unsplash.it/400/430?image=490" alt="" class="portafolio-img"/>
                       <section class="portafolio-text">
-                        <h5>genialidea.</h5>
+                        <h5>Titulo</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus doloremque, error nostrum tempora sapiente corporis.</p>
                       </section>
                     </section>
                     <section class="portafolio-item">
                       <img src="https://unsplash.it/400/430?image=490" alt="" class="portafolio-img"/>
                       <section class="portafolio-text">
-                        <h5>genialidea</h5>
+                        <h5>Titulo</h5>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus doloremque, error nostrum tempora sapiente corporis.</p>
                       </section>
                     </section>
@@ -78,9 +78,18 @@
                       echo "Base de datos";
                     } elseif ($_GET["form"] == "proveedor") {
                       echo "Proveedor";
-                    }
-                  } else {
+                    } elseif ($_GET["form"] == "serviweb") {
+                      echo "Servidor Web";
+                    } elseif ($_GET["form"] == "sistema_operativo") {
+                      echo "Sistema Operativo";
+                    } elseif ($_GET["form"] == "ambiente") {
+                      echo "Ambiente";
+                    } elseif ($_GET["form"] == "dispositivo") {
+                      echo "Dispositivo";
+                    } else {
                       echo 'Aplicación'; 
+                    }
+
                   }
 
                 ?>
@@ -94,14 +103,13 @@
                         $id = '';
                         
                         if (isset($_GET['form'])) {
-                          $id = $_GET['id'];
-                          echo $id;      
-                        if ($_GET["form"] == "lenguaje" || $_GET["form"] == "base_datos" || $_GET["form"] == "lenguaje" || $_GET["form"] == "proveedor") {
+
+                        if ($_GET["form"] == "lenguaje" || $_GET["form"] == "base_datos" || $_GET["form"] == "lenguaje" || $_GET["form"] == "proveedor" || $_GET["form"] == "serviweb" || $_GET['form'] == "sistema_operativo" || $_GET['form'] == "dispositivo" || $_GET['form'] == "ambiente"){
                           include "form/".$_GET["form"].".php";
                         }
 
                       } else {
-                        include'form/aplicacion.php';
+                        include 'form/aplicacion.php';
                       }              
 
                     ?>
@@ -113,18 +121,11 @@
 
         <div class="container-fluid fondo">
             <?php
-                include'footer.php';
+                include 'footer.php';
             ?>
         </div>
 
 
 <script src="js/bootstrap.js"></script>
-<script>
- function direccionamiento(){
-   alert("hola");
-   var id = "hola";
-   console.log(id);
- }
-</script>
 </body>
 </html>

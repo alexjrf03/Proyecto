@@ -22,4 +22,12 @@
             <input type="text" name="correo" placeholder="Ingrese el correo" class="form-control">
         </div>
     </div>
+
+    <div class="col-12 text-center mt-5 mb-4">
+            
+      <a class="btn btn-info" href="home.php?form=base_datos">Volver</a>
+      <a class="btn btn-success" href="home.php?form=serviweb">Siguente</a>                
+
+    </div>
+
 </div>
