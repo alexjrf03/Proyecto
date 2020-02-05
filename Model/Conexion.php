@@ -4,7 +4,7 @@ class Conexion {
 
     public $host;
     public $port;
-    public $db_name;
+    public $dbname;
     public $user;
     public $password;
     public $conex;
@@ -15,33 +15,49 @@ class Conexion {
         
         $this->host='localhost';
         $this->port='5432';        
-        $this->db_name='SGIA';
-        $this->user = 'alex';
+        $this->dbname='SGIA';
+        $this->user = 'postgres';
         $this->password='123456';
 
     } 
 
     public function conectar(){
         
-       // $datos = "host=".$this->host." dbname=".$this->db_name." user=".$this->user." password=".$this->password." ";
-        
-        $conexion = pg_connect("host=localhost dbname=SGIA user=alex password=123456") or die('No se ha podido conectar: ' . pg_last_error());
+        $datos = "host='$this->host' port='$this->port' dbname='$this->dbname' user='$this->user' password='$this->password'";
+
+        $conexion = pg_connect($datos);
 
         $this->conex = $conexion;
 
-        if(!$this->conex){
-            echo"Error";
-        }else{
-            echo"Exitoso";
-        }
+        // Para probar si la conexion fue exitosa
+
+        //if(!$this->conex){
+          //  echo"Error";
+        //}else{
+          //  echo"Exitoso";
+       // }
         
     }
 
-    // //para destruir la conexion a la bd
-    // function __destruct()
-    // {
-    //     pg_close($this->conex);
-    // }
+    //para realizar consultas a la bd
+    function consultar($sql)
+    {
+        $query = pg_query($sql);
+        if (!$query) echo $sql;
+            return $query;
+    }
+    //para mostrar los datos de la consulta de la bd
+    function mostrar($consultar)
+    {
+        $mostrar = pg_fetch_assoc($consultar);
+            return $mostrar;
+    }
+
+    //para destruir la conexion a la bd
+    function __destruct()
+    {
+    pg_close($this->conex);
+    }
 
 }
 
