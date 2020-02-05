@@ -19,7 +19,7 @@
 
     <div class="col-12 text-center mt-5 mb-4">
             
-      <a class="btn btn-success" href="home.php?form=ambiente">Enviar</a>
+      <a class="btn btn-success" href="index.php?form=ambiente">Enviar</a>
 
     </div>
 </div>

@@ -17,8 +17,8 @@
 
     <div class="col-12 text-center mt-5 mb-4">
             
-      <a class="btn btn-info" href="home.php">Volver</a>
-      <a class="btn btn-success" href="home.php?form=base_datos">Siguente</a>                
+      <a class="btn btn-info" href="index.php">Volver</a>
+      <a class="btn btn-success" href="index.php?form=base_datos">Siguente</a>                
 
     </div>
 </div>

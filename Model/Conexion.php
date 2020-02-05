@@ -37,11 +37,11 @@ class Conexion {
         
     }
 
-    //para destruir la conexion a la bd
-    function __destruct()
-    {
-        pg_close($this->conex);
-    }
+    // //para destruir la conexion a la bd
+    // function __destruct()
+    // {
+    //     pg_close($this->conex);
+    // }
 
 }
 
