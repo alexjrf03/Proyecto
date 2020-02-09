@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="View/Module/css/bootstrap.css">
 </head>
 <body>
+
       <?php 
         include'Module/navbar.php';
       ?>
