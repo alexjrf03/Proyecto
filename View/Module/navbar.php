@@ -5,7 +5,7 @@
     <div class="menu">
         <h5 class="logo" style="margin-top: 18px;">SGIA</h5>
         <a class="menu_form" href="#registrar">Registrar</a>
-        <a class="menu_form" href="#aplicaciones">Aplicaciones</a>
+        <a class="menu_form" href="index.php?r=mostrar">Aplicaciones</a>
         <a class="menu_form" href="#reportes">Reportes</a>
         <a class="salir" href="#salir">Salir</a>
     </div>

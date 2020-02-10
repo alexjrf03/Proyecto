@@ -1,132 +1,80 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Bienvenido SGIA</title>
-    <link rel="stylesheet" href="View/Module/css/est_form.css">
-    <link rel="stylesheet" href="View/Module/css/bootstrap.css">
+    <!-- title -->
+    <title>
+      <?php 
+        echo isset($_SESSION["iniciar"]) ? "Bienvenido al Sistema de Gestión de Aplicaiones (SGAI)" : "Login";
+      ?>
+	  </title>
+    <!-- all styles -->
+    <link rel="stylesheet" href="View/css/est_form.css">
+    <link rel="stylesheet" href="View/css/bootstrap.css">
+    <link rel="stylesheet" href="View/css/estilos.css">
+
 </head>
 <body>
 
-      <?php 
-        include'Module/navbar.php';
-      ?>
-              <section class="content">
-                <div class="grand-title" id="servicio">
-                  <h4 data-ix="slowfade-scroll-bigs">Ministerio del Poder Popular para Relaciones Exteriores</h4>
-                </div>
-                <div class="text">
-                  <div class="inner-text">
-                    <h3 data-ix="slowfade-scroll-bigs">Misión</h3>
-                    <i class="ic ion-fork"></i>
-                    <div class="text-box">
-                      <p data-ix="slowfade-scroll-bigs">Adoptar y cobijar a personas y sus acompañantes, perseguidos por motivos de raza, sexo, religión, nacionalidad, pertenecientes a determinado grupo social u opinión política.</p>
-                    </div>
-                  </div>
-                  <div class="inner-text">
-                    <h3 data-ix="slowfade-scroll-bigs">Valores</h3>
-                    <i class="ic ion-knife"></i>
-                    <div class="text-box">
-                      <p data-ix="slowfade-scroll-bigs">La Comisión Nacional para los Refugiados, cuenta con un alto sentido humanista, que trabaja conscientemente por el bienestar de nuestra institución, y así, poder brindar justicia a los solicitante de refugio.</p>
-                    </div>
-                  </div>
-                  <div class="inner-text">
-                    <h3 data-ix="slowfade-scroll-bigs">Visión</h3>
-                    <i class="ic ion-spoon"></i>
-                    <div class="text-box">
-                      <p data-ix="slowfade-scroll-bigs">Ser referencia en la comunidad latinoamericana, caribeña y más allá, en justicia de Refugio, Asilo de personas que los soliciten y, paradigma en derechos humanos.</p>
-                    </div>
-                  </div>
-                </div>
-            
-              
-                <section class="portafolio" id="trabajo">
-                  <h4 data-ix="slowfade-scroll-bigs">Trabajos</h4>
-                  <div class="portafolio-container">
-                    <section class="portafolio-item">
-                      <img src="https://unsplash.it/400/430?image=490" alt="" class="portafolio-img" />
-                      <section class="portafolio-text">
-                        <h5>tITULO</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus doloremque, error nostrum tempora sapiente corporis.</p>
-                      </section>
-                    </section>
-                    <section class="portafolio-item">
-                      <img src="https://unsplash.it/400/430?image=490" alt="" class="portafolio-img"/>
-                      <section class="portafolio-text">
-                        <h5>Titulo</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus doloremque, error nostrum tempora sapiente corporis.</p>
-                      </section>
-                    </section>
-                    <section class="portafolio-item">
-                      <img src="https://unsplash.it/400/430?image=490" alt="" class="portafolio-img"/>
-                      <section class="portafolio-text">
-                        <h5>Titulo</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus doloremque, error nostrum tempora sapiente corporis.</p>
-                      </section>
-                    </section>
-                  </div>
-                </section>
-              </section>
-              
-              <div class="footer" id="contacto">
-              <h4 id="registrar" data-ix="slowfade-scroll-bigs">
-                <?php 
-                  
-                  if (isset($_GET['form'])) {
-                    if ($_GET["form"] == "lenguaje") {
-                      echo "Lenguaje";
-                    } elseif ($_GET["form"] == "base_datos") {
-                      echo "Base de datos";
-                    } elseif ($_GET["form"] == "proveedor") {
-                      echo "Proveedor";
-                    } elseif ($_GET["form"] == "serviweb") {
-                      echo "Servidor Web";
-                    } elseif ($_GET["form"] == "sistema_operativo") {
-                      echo "Sistema Operativo";
-                    } elseif ($_GET["form"] == "ambiente") {
-                      echo "Ambiente";
-                    } elseif ($_GET["form"] == "dispositivo") {
-                      echo "Dispositivo";
-                    } else {
-                      echo 'Aplicación'; 
-                    }
+<?php
+	//si existe una variable de sesión activa llamada iniciar
+	if(isset($_SESSION["iniciar"]) && $_SESSION["iniciar"] == "ok") {
+	    echo '<div class="wrapper">';
+	    //incluye la cabecera 
+		include "Module/navbar.php";
 
-                  }
+		//si existe un valor por el metodo get comparalo e incluyelo 
+    	if(isset($_GET["r"])) {
 
-                ?>
-              </h4>
+		    if($_GET["r"] == "home" || $_GET["r"] == "logout") {
 
-              <div class="container"> 
-                 
-                    <form action="enviar.php" method="post">
-                      <?php
+		      		if (($_GET["r"] == "new_user" || $_GET["r"] == "listar_user" || $_GET["r"] == "modificar_user" ||  $_GET["r"] == "insertar_p" ||  $_GET["r"] == "insertar_c") && $_SESSION['admin'] == 'f') {
 
-                        $id = '';
-                        
-                        if (isset($_GET['form'])) {
+		      			include "Module/acceso_denegado.php";
 
-                        if ($_GET["form"] == "lenguaje" || $_GET["form"] == "base_datos" || $_GET["form"] == "lenguaje" || $_GET["form"] == "proveedor" || $_GET["form"] == "serviweb" || $_GET['form'] == "sistema_operativo" || $_GET['form'] == "dispositivo" || $_GET['form'] == "ambiente"){
-                          include "Module/form/".$_GET["form"].".php";
-                        }
+		      		} else {
 
-                      } else {
-                        include 'Module/form/aplicacion.php';
-                      }              
+						include "Module/".$_GET["r"].".php";
+		      		}
+		        	
 
-                    ?>
-                </form>
-              
-            </div>
+	      	} else {
+      			//si no coincide incluye la vista de error
+        		include "Module/404.php";
 
-            <br>
+      		}
 
-        <div class="container-fluid fondo">
-            <?php
-                include 'Module/footer.php';
-            ?>
-        </div>
+	    } else {
+    		// si no existe valor pasado por el metodo get incluye el home
+	      	include 'Module/home.php';
+	    }
+	    echo '<div class="push"></div>
+	    	</div>';
 
+	    // incluye el pie de pagina 
+	    include "Module/footer.php";
 
-<script src="View/Module/js/bootstrap.js"></script>
+	} else {
+
+		if(isset($_GET["r"])) {
+
+			if ($_GET["r"] == "reset_password") {
+				include "Module/reset_password.php";				
+			} elseif ($_GET["r"] == "change_password") {
+				include "Module/change_password.php";
+			}
+
+		} else {
+			// si no existe una variable de sesión iniciada o activa incluye el login
+			include 'Module/login.php';
+		}	  	
+	}
+?>
+
+  <script src="View/js/bootstrap.js"></script>
+
 </body>
 </html>

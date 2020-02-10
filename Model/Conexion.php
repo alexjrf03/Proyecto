@@ -63,3 +63,6 @@ class Conexion {
 
 $conexion = new Conexion();
 $conexion->conectar();
+$pss = md5('admin1234');
+$sql = 'INSERT INTO Usuario (Correo, Password, Estatus, Ultima_conexion, Admin) VALUES ("admin@gmail.com", "$pss", "true", "2020","true")';
+$conexion->consultar($sql);
