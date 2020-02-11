@@ -11,7 +11,7 @@ class Login {
             $db = new Conexion();
             $db->conectar();
         
-            $sql = "SELECT *FROM Usuario WHERE $item = '$value'";
+            $sql = "SELECT *FROM usuario WHERE $item = '$value'";
         
             $result = $db->consultar($sql);        
             $resp = $db->mostrar($result);
@@ -25,7 +25,7 @@ class Login {
         $db = new Conexion();
         $db->conectar();
      
-        $sql = "UPDATE Usuario SET $item1 = '$value1' WHERE $item2 = '$value2'";
+        $sql = "UPDATE usuario SET $item1 = '$value1' WHERE $item2 = '$value2'";
         
         $result = $db->consultar($sql);
         $resp = $db->mostrar($result);

@@ -61,8 +61,9 @@ class Conexion {
 
 }
 
-$conexion = new Conexion();
-$conexion->conectar();
-$pss = md5('admin1234');
-$sql = 'INSERT INTO Usuario (Correo, Password, Estatus, Ultima_conexion, Admin) VALUES ("admin@gmail.com", "$pss", "true", "2020","true")';
-$conexion->consultar($sql);
+// $conexion = new Conexion();
+// $conexion->conectar();
+// $pss = md5('admin1234');
+// $sql = "DELETE FROM usuario";
+// $sql = "INSERT INTO usuario (correo, password, estatus, admin) VALUES ('admin@gmail.com', '$pss',true, true)";
+// $conexion->consultar($sql);

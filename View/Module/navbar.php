@@ -7,7 +7,11 @@
         <a class="menu_form" href="#registrar">Registrar</a>
         <a class="menu_form" href="index.php?r=mostrar">Aplicaciones</a>
         <a class="menu_form" href="#reportes">Reportes</a>
-        <a class="salir" href="#salir">Salir</a>
+        <a class="salir" href="#salir">
+            <form class="form-inline my-2 my-lg-0 new_font" action="View/Module/logout.php" method="POST">
+                <button type="submit">salir</button>
+            </form>
+        </a>
     </div>
     </div>
     <div class="photo-text">

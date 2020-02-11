@@ -61,8 +61,8 @@
 
 		if(isset($_GET["r"])) {
 
-			if ($_GET["r"] == "reset_password") {
-				include "Module/reset_password.php";				
+			if ($_GET["r"] == "register") {
+				include "Module/".$_GET["r"].".php";				
 			} elseif ($_GET["r"] == "change_password") {
 				include "Module/change_password.php";
 			}

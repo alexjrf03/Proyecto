@@ -27,7 +27,7 @@
         <br>
         <br>
         
-        <a href="crear_cuenta.html" class="link_cuenta">Crear cuenta</a>
+        <a href="index.php?r=register" class="link_cuenta">Crear cuenta</a>
 
         <?php
 
