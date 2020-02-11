@@ -67,7 +67,7 @@
 
     </div>
 
-    <div class="col-12 text-center mt-3">
+    <div class="col-12 text-center mt-3 mb-5">
             <br><a class="btn btn-success" href="index.php?form=lenguaje">Siguente</a>
 
     </div>

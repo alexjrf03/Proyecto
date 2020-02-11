@@ -11,7 +11,7 @@ class Login {
             $db = new Conexion();
             $db->conectar();
         
-            $sql = "SELECT *FROM usuario WHERE $item = '$value'";
+            $sql = "SELECT * FROM usuario WHERE $item = '$value'";
         
             $result = $db->consultar($sql);        
             $resp = $db->mostrar($result);

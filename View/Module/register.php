@@ -1,17 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="css/estilos.css">
-        <title>Crear Cuenta</title>
-    </head>
-    
-    <body>
+<body class="background-login">
         
         <h1 class="titulo">Crear Cuenta</h1>
         
         <div class="cuenta_caja">
-            <img class="img_clave" src="img/usuario.png" alt="Icono Usuario">
+            <img class="img_clave" src="View/img/usuario.png" alt="Icono Usuario">
             
             <h1><span>C</span>uenta</h1>
             
@@ -47,9 +39,8 @@
                 <br>
                 <br>
                 
-                <a href="login.html" class="link_inicio">Volver al Inicio</a>
+            <a href="index.php" class="link_inicio">Volver al Inicio</a>
                 
             </form>
         </div>
-    </body>
-</html>
+</body>

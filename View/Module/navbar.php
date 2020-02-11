@@ -3,14 +3,15 @@
     <div class="nav new-menu" id="sticker">
     <input type="checkbox" id="toggle" />
     <div class="menu">
-        <h5 class="logo" style="margin-top: 18px;">SGIA</h5>
+        <h5 class="logo"> <a href="index.php">SGIA</a></h5>
         <a class="menu_form" href="#registrar">Registrar</a>
         <a class="menu_form" href="index.php?r=mostrar">Aplicaciones</a>
         <a class="menu_form" href="#reportes">Reportes</a>
-        <a class="salir" href="#salir">
-            <form class="form-inline my-2 my-lg-0 new_font" action="View/Module/logout.php" method="POST">
-                <button type="submit">salir</button>
-            </form>
+        <a class="salir" href="View/Module/logout.php">
+        salir
+            <!-- <form class="form-inline my-2 my-lg-0 new_font" action="" method="POST"> -->
+                <!-- <button type="submit">salir</button> -->
+            <!-- </form> -->
         </a>
     </div>
     </div>

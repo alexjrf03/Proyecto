@@ -12,7 +12,6 @@
       ?>
 	  </title>
     <!-- all styles -->
-    <link rel="stylesheet" href="View/css/est_form.css">
     <link rel="stylesheet" href="View/css/bootstrap.css">
     <link rel="stylesheet" href="View/css/estilos.css">
 
@@ -29,7 +28,7 @@
 		//si existe un valor por el metodo get comparalo e incluyelo 
     	if(isset($_GET["r"])) {
 
-		    if($_GET["r"] == "home" || $_GET["r"] == "logout") {
+		    if($_GET["r"] == "home" || $_GET["r"] == "logout" || $_GET["r"] == "mostrar") {
 
 		      		if (($_GET["r"] == "new_user" || $_GET["r"] == "listar_user" || $_GET["r"] == "modificar_user" ||  $_GET["r"] == "insertar_p" ||  $_GET["r"] == "insertar_c") && $_SESSION['admin'] == 'f') {
 
