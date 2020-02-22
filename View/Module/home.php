@@ -88,18 +88,23 @@
   <form action="enviar.php" method="post">
       <?php
 
-        $id = '';
-        
-        if (isset($_GET['form'])) {
+        // if (isset($_GET['form'])) {
 
-        if ($_GET["form"] == "lenguaje" || $_GET["form"] == "base_datos" || $_GET["form"] == "lenguaje" || $_GET["form"] == "proveedor" || $_GET["form"] == "serviweb" || $_GET['form'] == "sistema_operativo" || $_GET['form'] == "dispositivo" || $_GET['form'] == "ambiente"){
-          include "form/".$_GET["form"].".php";
-        }
+        //   if ($_GET["form"] == "lenguaje" || 
+        //       $_GET["form"] == "base_datos" ||
+        //       $_GET["form"] == "lenguaje" ||
+        //       $_GET["form"] == "proveedor" ||
+        //       $_GET["form"] == "serviweb" ||
+        //       $_GET['form'] == "sistema_operativo" ||
+        //       $_GET['form'] == "dispositivo" ||
+        //       $_GET['form'] == "ambiente"){
 
-      } else {
-        include 'form/aplicacion.php';
-      }              
-
+        //       include "form/".$_GET["form"].".php";
+          
+        //   }
+        // } else {
+          include 'form/aplicacion.php';
+        // }
     ?>
   </form>
   
