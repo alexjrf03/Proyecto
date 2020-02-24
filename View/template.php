@@ -30,7 +30,7 @@
 
 		    if($_GET["r"] == "home" || $_GET["r"] == "logout" || $_GET["r"] == "mostrar") {
 
-		      		if (($_GET["r"] == "new_user" || $_GET["r"] == "listar_user" || $_GET["r"] == "modificar_user" ||  $_GET["r"] == "insertar_p" ||  $_GET["r"] == "insertar_c") && $_SESSION['admin'] == 'f') {
+		      		if (($_GET["r"] == "new_user" || $_GET["r"] == "listar_user" || $_GET["r"] == "modificar_user") && $_SESSION['admin'] == 'f') {
 
 		      			include "Module/acceso_denegado.php";
 
