@@ -1,10 +1,9 @@
-window.onload = (function(){
+
     try{
         
-        // $("#siguiente").on('keyup', function(){
-        function ajaxForm () {
-            alert('hola');
-            let buscar = document.getElementById('form').value;                    
+        function ajaxQ () {
+            
+            let buscar = document.getElementById('form').value;
 
             function httpQuest()
             {
@@ -31,7 +30,7 @@ window.onload = (function(){
                     if (http.readyState==4 || http.readyState==0) {
                         var myRand=parseInt(Math.random()*999999999999);
 
-                        http.open("GET","../IVPA/Ajax/consultasAjax.php?myRand="+myRand+"&buscar="+buscar,true);         
+                        http.open("GET","../Proyecto/Ajax/change_form.php?myRand="+myRand+"&form="+buscar,true);         
                         http.onreadystatechange=function(){           
                         if ((http.readyState==4 && http.status==200)) {
                             
@@ -57,7 +56,5 @@ window.onload = (function(){
 
             getBusqueda(buscar);
         }
-        // }).keyup();
 
     } catch(e) { console.log(e) }
-});

@@ -1,3 +1,9 @@
+<div class="container text-center">
+  <h4 id="registrar" data-ix="slowfade-scroll-bigs">
+   Ambiente
+  </h4>
+</div>
+
 <div class="row">
     <div class="col-4 text-center">
         <div class="from-group">
@@ -16,10 +22,10 @@
             <br><input type="radio" name="estatus-amb" value="Desarrollo" checked> Desarrollo
         </div>
     </div>
-
+    <input type="hidden" id="form" value="ambiente">
     <div class="col-12 text-center mt-5 mb-4">
             
-      <a class="btn btn-success" href="index.php?form=ambiente">Enviar</a>
+      <a class="btn btn-success" href="index.php?form=ready">Enviar</a>
 
     </div>
 </div>

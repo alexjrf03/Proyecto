@@ -1,3 +1,9 @@
+<div class="container text-center">
+  <h4 id="registrar" data-ix="slowfade-scroll-bigs">
+   Base de datos
+  </h4>
+</div>
+
 <div class="row">
     <div class="col-6">
         <div class="from-group">
@@ -27,10 +33,11 @@
         </div>
     </div>
 
+    <input type="hidden" id="form" value="proveedor">
     <div class="col-12 text-center mt-5 mb-4">
             
       <a class="btn btn-info" href="index.php?form=lenguaje">Volver</a>
-      <a class="btn btn-success" href="index.php?form=proveedor">Siguente</a>
+      <button type="submit" class="btn btn-success" onclick="ajaxQ()">Siguente</button>
 
     </div>
 </div>

@@ -55,57 +55,16 @@
   </section>
 </section>
       
-<div class="container text-center">
+<!-- <div class="container text-center">
   <h4 id="registrar" data-ix="slowfade-scroll-bigs">
-    <?php 
-      
-      if (isset($_GET['form'])) {
-        if ($_GET["form"] == "lenguaje") {
-          echo "Lenguaje";
-        } elseif ($_GET["form"] == "base_datos") {
-          echo "Base de datos";
-        } elseif ($_GET["form"] == "proveedor") {
-          echo "Proveedor";
-        } elseif ($_GET["form"] == "serviweb") {
-          echo "Servidor Web";
-        } elseif ($_GET["form"] == "sistema_operativo") {
-          echo "Sistema Operativo";
-        } elseif ($_GET["form"] == "ambiente") {
-          echo "Ambiente";
-        } elseif ($_GET["form"] == "dispositivo") {
-          echo "Dispositivo";
-        } 
-      } else {
-        echo "Aplicación"; 
-      }
-
-    ?>
+    Formularios
   </h4>
-</div>
+</div> -->
 
 <div class="container"> 
       
-  <form action="enviar.php" method="post">
-      <?php
-
-        // if (isset($_GET['form'])) {
-
-        //   if ($_GET["form"] == "lenguaje" || 
-        //       $_GET["form"] == "base_datos" ||
-        //       $_GET["form"] == "lenguaje" ||
-        //       $_GET["form"] == "proveedor" ||
-        //       $_GET["form"] == "serviweb" ||
-        //       $_GET['form'] == "sistema_operativo" ||
-        //       $_GET['form'] == "dispositivo" ||
-        //       $_GET['form'] == "ambiente"){
-
-        //       include "form/".$_GET["form"].".php";
-          
-        //   }
-        // } else {
-          include 'form/aplicacion.php';
-        // }
-    ?>
+  <form action="" method="post" id="formulario">
+    <span id="respuesta"></span>
   </form>
   
 </div>

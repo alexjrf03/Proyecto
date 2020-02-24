@@ -1,3 +1,9 @@
+<div class="container text-center">
+  <h4 id="registrar" data-ix="slowfade-scroll-bigs">
+   Aplicacion
+  </h4>
+</div>
+
 <div class="row">
     <div class="col-6">
 
@@ -66,8 +72,8 @@
         </div> 
 
     </div>
-
+    <input type="hidden" id="form" value="lenguaje">
     <div class="col-12 text-center mt-3 mb-5">
-        <br><a class="btn btn-success" id="siguiente" onclick="ajaxForm()">Siguente</a>
+        <br><button type="submit" class="btn btn-success" onclick="ajaxQ()">Siguente</button>
     </div>
 </div>
