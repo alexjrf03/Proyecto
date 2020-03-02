@@ -9,7 +9,7 @@
 
         <div class="from-group">
             <label for="nombre-proveedor">Nombre Proveedor</label>
-            <input type="text" name="nombre-proveedor" placeholder="Ingrese el nombre del proveedor" class="form-control">
+            <input type="text" name="nombre_proveedor" placeholder="Ingrese el nombre del proveedor" class="form-control">
         </div>
 
     </div>
@@ -18,7 +18,7 @@
 
         <div class="from-group">
             <label for="tlfn">Teléfono</label>
-            <input type="text" name="name" placeholder="Ingrese el teléfono" class="form-control">
+            <input type="text" name="phone" placeholder="Ingrese el teléfono" class="form-control">
         </div>
     </div>
 
@@ -28,13 +28,4 @@
             <input type="text" name="correo" placeholder="Ingrese el correo" class="form-control">
         </div>
     </div>
-    
-    <input type="hidden" id="form" value="serviweb">
-    <div class="col-12 text-center mt-5 mb-4">
-            
-      <a class="btn btn-info" href="index.php?form=base_datos">Volver</a>
-      <button type="submit" class="btn btn-success" onclick="ajaxQ()">Siguente</button>                
-
-    </div>
-
 </div>

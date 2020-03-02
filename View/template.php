@@ -14,6 +14,8 @@
     <!-- all styles -->
     <link rel="stylesheet" href="View/css/bootstrap.css">
 	<link rel="stylesheet" href="View/css/estilos.css">
+	<!-- alertas suaves styles and logic js-->
+	<script src="View/js/sweetalert2.all.js"></script>
 
 </head>
 <body>
@@ -28,7 +30,7 @@
 		//si existe un valor por el metodo get comparalo e incluyelo 
     	if(isset($_GET["r"])) {
 
-		    if($_GET["r"] == "home" || $_GET["r"] == "logout" || $_GET["r"] == "mostrar") {
+		    if($_GET["r"] == "home" || $_GET["r"] == "logout" || $_GET["r"] == "mostrar" || $_GET["r"] == "update") {
 
 		      		if (($_GET["r"] == "new_user" || $_GET["r"] == "listar_user" || $_GET["r"] == "modificar_user") && $_SESSION['admin'] == 'f') {
 
@@ -72,8 +74,6 @@
 		}	  	
 	}
 ?>
-    <input type="hidden" id="form" value="aplicacion">
-
     <!-- script -->
     <script src="View/js/jquery-3.1.0.min.js"></script>
   	<script src="View/js/bootstrap.js"></script>

@@ -15,8 +15,8 @@
 
         <div class="input-text">
             <br> <label for="">Estatus</label>
-            <br> <input type="radio" name="estatus" value="activo" checked> Activo
-            <br> <input type="radio" name="estatus" value="inactivo" checked> Inactivo
+            <br> <input type="radio" name="status" value="activo" checked> Activo
+            <br> <input type="radio" name="status" value="inactivo" checked> Inactivo
         </div>
 
     </div>
@@ -24,20 +24,12 @@
     <div class="col-6">
         <div class="from-group">
             <label for="servidor">Servidor de Base de Datos</label>
-            <input type="text" name="servidor" placeholder="Describa el Servidor" class="form-control">
+            <input type="text" name="servidor" placeholder="Describa el Servidor" class="form-control" required>
         </div>
 
         <div class="from-group">
             <br><label for="descripcion-bd">Descripción Base de Datos</label>
             <textarea rows="3" name="descripcion-bd" class="form-control" required></textarea>
         </div>
-    </div>
-
-    <input type="hidden" id="form" value="proveedor">
-    <div class="col-12 text-center mt-5 mb-4">
-            
-      <a class="btn btn-info" href="index.php?form=lenguaje">Volver</a>
-      <button type="submit" class="btn btn-success" onclick="ajaxQ()">Siguente</button>
-
     </div>
 </div>
