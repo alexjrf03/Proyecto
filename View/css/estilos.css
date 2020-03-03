@@ -855,3 +855,46 @@ p[data-ix="subtitle-hero-up"] {
   color: #fff;
   font-size: 18px;
 }
+
+.first-titulo-form{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  margin: 30px;
+  color: #354757;
+}
+
+.titulo-form{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  margin: 30px;
+  color: #354757;
+  margin-top: 70px;
+}
+
+.input-form{
+  height: 50px;
+}
+
+.input-form:focus{
+  transform: scale(1.1);
+}
+
+.container h4:after{
+  content: '';
+  display: block; 
+  width: 5%;
+  height: 3px;
+  margin: 20px auto;
+  border: 0;
+  background: #27F3ED;
+}
+
+.title-works{
+  margin: auto;
+  margin-top: 100px;
+}
+

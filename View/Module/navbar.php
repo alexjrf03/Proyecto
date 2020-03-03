@@ -4,7 +4,7 @@
     <input type="checkbox" id="toggle" />
     <div class="menu">
         <h5 class="logo"> <a href="index.php">SGIA</a></h5>
-        <a class="menu_form" href="index.php?r=listar_user">gestionar usuarios</a>
+        <a class="menu_form" href="index.php?r=listar_user">gestionar</a>
         <a class="menu_form" href="index.php">Registrar</a>
         <a class="menu_form" href="index.php?r=mostrar">Aplicaciones</a>
         <a class="menu_form" href="#reportes">Reportes</a>

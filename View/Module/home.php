@@ -7,13 +7,8 @@
   echo '<div class="container"> 
           <form action="" method="post">';
             include "form/aplicacion.php";
-            include "form/lenguaje.php";
             include "form/base_datos.php";
             include "form/proveedor.php";
-            include "form/serviweb.php";
-            include "form/sistema_operativo.php";
-            include "form/dispositivo.php";
-            include "form/ambiente.php";
 
             $insertar = new AppController();
 			      $insertar->create();

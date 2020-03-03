@@ -29,11 +29,11 @@
 
             } else {
 
-                echo "<h1 class='text-center'>hay solo ".count($aplicaciones)." registros</h1>";
+                echo "<h1 class='text-center title-works'>hay solo ".count($aplicaciones)." registros</h1>";
             }
 
         } else {
-            echo "<h1>No hay registros</h1>";
+            echo "<h1 class='title-works'>No hay registros</h1>";
         }
 
     ?>
