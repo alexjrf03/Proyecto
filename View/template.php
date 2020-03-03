@@ -30,7 +30,13 @@
 		//si existe un valor por el metodo get comparalo e incluyelo 
     	if(isset($_GET["r"])) {
 
-		    if($_GET["r"] == "home" || $_GET["r"] == "logout" || $_GET["r"] == "mostrar" || $_GET["r"] == "update") {
+			if(	$_GET["r"] == "home" ||
+				$_GET["r"] == "logout" ||
+				$_GET["r"] == "mostrar" ||
+				$_GET["r"] == "update" ||
+				$_GET["r"] == "new_user" ||
+				$_GET["r"] == "listar_user" ||
+				$_GET["r"] == "modificar_user") {
 
 		      		if (($_GET["r"] == "new_user" || $_GET["r"] == "listar_user" || $_GET["r"] == "modificar_user") && $_SESSION['admin'] == 'f') {
 

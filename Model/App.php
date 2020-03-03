@@ -42,7 +42,8 @@ class App {
         $bd = new Conexion();
         $bd->conectar();
 
-        $query = "INSERT INTO $tabla (name,final_user,uso,url,conection_file,firms,attached_files,authentication_method,description,device,languaje,web_service,so,provider_data,database,environment) VALUES ('".$data['name']."' ,'".$data['final_user']."', '".$data['uso']."','".$data['url']."', '".$data['conection_file']."', '".$data['firms']."','".$data['attached_files']."','".$data['authentication_method']."','".$data['description']."','".$data['device']."','".$data['languaje']."','".$data['web_service']."','".$data['so']."','".$data['provider_data']."','".$data['database']."','".$data['environment']."')";
+        $query = "INSERT INTO $tabla (name,final_user,uso,url,conection_file,firms,attached_files,authentication_method,description,device,languaje,web_service,so,provider_data,database,environment) 
+                    VALUES ('".$data['name']."' ,'".$data['final_user']."', '".$data['uso']."','".$data['url']."', '".$data['conection_file']."', '".$data['firms']."','".$data['attached_files']."','".$data['authentication_method']."','".$data['description']."','".$data['device']."','".$data['languaje']."','".$data['web_service']."','".$data['so']."','".$data['provider_data']."','".$data['database']."','".$data['environment']."')";
 
         $bd->consultar($query);
 
@@ -55,7 +56,7 @@ class App {
         $bd=new Conexion();
         $bd->conectar();
 
-        $query="UPDATE $tabla SET environment=".$data['environment']."', name='".$data['name']."' , final_user='".$data['final_user']."', uso='".$data['uso']."', url='".$data['url']."', conection_file='".$data['conection_file']."', attached_files='".$data['attached_files']."', authentication_method='".$data['authentication_method']."', description='".$data['description']."', device='".$data['device']."', languaje='".$data['languaje']."', web_service='".$data['web_service']."', so='".$data['so']."', provider_data='".$data['provider_data']."', database='".$data['database']."' WHERE id='".$data['id']."' ";
+        $query="UPDATE $tabla SET name='".$data['name']."' ,final_user='".$data['final_user']."',uso='".$data['uso']."',url='".$data['url']."',conection_file='".$data['conection_file']."',firms='".$data['firms']."',attached_files='".$data['attached_files']."',authentication_method='".$data['authentication_method']."',description='".$data['description']."',device='".$data['device']."',languaje='".$data['languaje']."',web_service='".$data['web_service']."',so='".$data['so']."',provider_data='".$data['provider_data']."',database='".$data['database']."',environment='".$data['environment']."' WHERE id='".$data['id']."' ";
 
         $bd->consultar($query);
 

@@ -11,7 +11,7 @@
         
         if ($aplicaciones[0] != '') {
            
-            if (count($aplicaciones) == 3) {
+            if (count($aplicaciones) >= 3) {
                 
                 $i = 0;
 

@@ -11,9 +11,7 @@
     </strong>
     <br>
     <div class="col-md-12 text-center">
-    	<button  class="btn btn-success my-2 my-sm-0" name="volver">
-   		<a class="boton" href="index.php">Atras</a>
-	</button>
+   		<a class="btn btn-success" href="index.php">Atras</a>
 	</div>
 </div>
 <br>

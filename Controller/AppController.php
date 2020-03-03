@@ -14,7 +14,6 @@ class AppController {
       if(isset($_POST['nombre_proveedor'])){
 
         $database = $_POST['nombre_bd'].','.$_POST['status'].','.$_POST['servidor'].','.$_POST['descripcion-bd'];
-
         $provider = $_POST['nombre_proveedor'].','.$_POST['phone'].','.$_POST['correo'];             
         
         if ($_POST['environment'] && $_POST['name']) {
@@ -77,22 +76,33 @@ class AppController {
 
   static public function update(){
         
-      if(isset($_POST['editar'])){
-          // print_r($_POST);
-          if($_POST['telefono'] && $_POST['name'] && $_POST['direccion']){
+      if(isset($_POST['nombre_proveedor'])){
+        
+        $database = $_POST['nombre_bd'].','.$_POST['status'].','.$_POST['servidor'].','.$_POST['descripcion-bd'];
+        $provider = $_POST['nombre_proveedor'].','.$_POST['phone'].','.$_POST['correo'];             
+        
+        if($_POST['environment'] && $_POST['name']){
 
                 $tabla='aplicacion';
                 
-                $data = array('id_app'=>$_POST['id_app'],
-                              'telefono'=>$_POST['telefono'],
-                              'nombre'=>$_POST['name'],
-                              'direccion'=>$_POST['direccion'],
-                              'email'=>$_POST['email'],
-                              'service'=>$_POST['service'],
-                              'tipo_app'=>$_POST['tipo_app'],
-                              'nit'=>$_POST['nit'],
-                              'rif'=>$_POST['rif'],
-                            );
+                $data = array('id' => $_POST['id'],
+                              'environment' => $_POST['environment'],
+                              'name' => $_POST['name'],
+                              'final_user' => $_POST['final_user'],
+                              'url' => $_POST['url'],
+                              'uso' => $_POST['uso'],
+                              'conection_file' => $_POST['conection_file'],
+                              'firms' => $_POST['firms'],
+                              'attached_files' => $_POST['attached_files'],
+                              'authentication_method' => $_POST['authentication_method'],
+                              'description' => $_POST['description'],
+                              'device' => $_POST['device'],
+                              'languaje' => $_POST['languaje'],
+                              'web_service' => $_POST['web_service'],
+                              'so' => $_POST['so'],
+                              'provider_data' => $provider,
+                              'database' => $database
+                            );  
               
               $resp = App::updateApp($tabla, $data);
               
