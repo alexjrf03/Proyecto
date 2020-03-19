@@ -16,8 +16,8 @@
         <br> <label for="">Estatus</label>
         <select class="custom-select input-form" name="select-bd" id="">
             <option value="seleccione">Seleccione..</option>
-            <option value="">Activo</option>
-            <option value="">Inactivo</option>
+            <option value="Activo">Activo</option>
+            <option value="Inactivo">Inactivo</option>
         </select>
     
 

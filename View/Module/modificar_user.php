@@ -23,7 +23,7 @@ do{
 
 			<div class="form-group col-md-3">
 			  <label for="surname">Password</label>
-			  <input type="text" class="form-control" name="pass" placeholder="nueva clave" required>
+			  <input type="password" class="form-control" name="pass" placeholder="nueva clave" required>
 			</div>
 
 			<div class="form-group col-md-6">

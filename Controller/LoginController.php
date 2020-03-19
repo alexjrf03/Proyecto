@@ -7,7 +7,6 @@ class LoginController {
 		if(isset($_POST["username"])){
 
 			if($_POST["username"] && preg_match('/^[a-zA-Z0-9]+$/', $_POST["password"])) {
-                // echo $_POST["username"];
 				$item = "correo";
 				$value = $_POST["username"];
 
@@ -21,45 +20,59 @@ class LoginController {
 					$_SESSION["admin"] = $respuesta['admin'];
 					$_SESSION["estatus"] = $respuesta['estatus'];
 
-					//registrar fecha y hora del login
-					date_default_timezone_set('America/Caracas');
+					if ($_SESSION["estatus"] == 't') {
+						
+						//registrar fecha y hora del login
+						date_default_timezone_set('America/Caracas');
+						$fecha = date('Y-m-d');
+						$hora = date('H:i:s');
+						$fechaact = $fecha.' '.$hora;
+						$item1 = "ultima_conexion";
+						$value1 = $fechaact;
+						$item2 = "correo";
+						$value2 = $respuesta["correo"];
+						$ultimo = Login::actualizar($item1 , $value1, $item2, $value2);
 
-					$fecha = date('Y-m-d');
-					$hora = date('H:i:s');
+						if($ultimo == "ok"){
+						  
+						echo '<script>
+							  	window.location = "index.php";
+							 </script>';
+	              
+	      				}
 
-					$fechaact = $fecha.' '.$hora;
-
-					$item1 = "ultima_conexion";
-					$value1 = $fechaact;
-
-					$item2 = "correo";
-					$value2 = $respuesta["correo"];
-
-					$ultimo = Login::actualizar($item1 , $value1, $item2, $value2);
-
-					if($ultimo == "ok"){
-					  
-					echo '<script>
-						  	window.location = "index.php";
-						 </script>';
-              
-      				}   
+					} else {
+						
+						echo '<script>
+								swal({
+			                      type: "error",
+			                      title: "Error usuario Inactivo, debe ser reactivado por el Administrador",
+			                      showConfirmButton: true,
+			                      confirmButtonText: "ok",
+			                      closeOnConfirm: false
+			                      }).then((result) => {
+			                        if (result.value) {
+			                          window.location = window.location = "View/Module/logout.php";
+			                        }
+			                  	})
+							 </script>';
+					}
 
 				} else {
 
 					echo '
 	                <script>  
-	                  swal({
-	                      type: "error",
-	                      title: "Error al ingresar, usuario o clave incorrecta. vuelve a intentarlo",
-	                      showConfirmButton: true,
-	                      confirmButtonText: "ok",
-	                      closeOnConfirm: false
-	                      }).then((result) => {
-	                        if (result.value) {
-	                          window.location = "index.php";
-	                        }
-	                  })    
+		                  swal({
+		                      type: "error",
+		                      title: "Error al ingresar, usuario o clave incorrecta. vuelve a intentarlo",
+		                      showConfirmButton: true,
+		                      confirmButtonText: "ok",
+		                      closeOnConfirm: false
+		                      }).then((result) => {
+		                        if (result.value) {
+		                          window.location = "index.php";
+		                        }
+		                  })    
 	                </script>';
 
 				}
@@ -170,6 +183,7 @@ static public function update(){
 						  closeOnConfirm: false
 						  }).then((result) => {
 							if (result.value) {
+								window.location = "index.php?r=listar_user";
 							}
 					  })    
 					</script>';                   

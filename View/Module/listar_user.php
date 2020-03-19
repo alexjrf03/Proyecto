@@ -12,20 +12,9 @@
         $value = null;
             
 		$usuario = LoginController::query($item,$value);
+		$_SESSION['all_user'] = $usuario;
 
-		if($value['estatus'] == 1 || true ){
-			$status = 'Activo';
-		} else {
-			$status = 'Inactivo';
-		}
-
-		if($value['admin'] == 1 || true ){
-			$admin = 'Administrador';
-		} else {
-			$admin = 'Normal';
-		}
-
-            if ($usuario[0] != '') {
+        if ($usuario[0] != '') {
                 
 			echo '<table class="table table-hover" style="margin: 30px auto; font-size: 12px; position:relative; padding: 2px;">
 			  <thead>
@@ -40,7 +29,10 @@
 			  </thead>';
           
           
-	            foreach($usuario as $key => $value) {			  	
+	        foreach($_SESSION['all_user'] as $key => $value) {
+			// Para saber en que estado esta el usuario y saber si es admin.
+				$status = $value['estatus'] == 't' ? 'Activo' : 'Inactivo';
+				$admin = $value ['admin'] == 'f' ? 'Normal' : 'Administrador';
 				
 				echo '
 				    <tr>
@@ -56,8 +48,8 @@
 					  }
 				      echo'</td>
 				    </tr> ';
-	  			}
-	  		}             
+	  		}
+	  	}             
 ?>
 			  </tbody>
 			</table>

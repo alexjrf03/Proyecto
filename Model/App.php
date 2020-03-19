@@ -42,8 +42,8 @@ class App {
         $bd = new Conexion();
         $bd->conectar();
 
-        $query = "INSERT INTO $tabla (name,final_user,uso,url,conection_file,firms,attached_files,authentication_method,description,device,languaje,web_service,so,provider_data,database,environment) 
-                    VALUES ('".$data['name']."' ,'".$data['final_user']."', '".$data['uso']."','".$data['url']."', '".$data['conection_file']."', '".$data['firms']."','".$data['attached_files']."','".$data['authentication_method']."','".$data['description']."','".$data['device']."','".$data['languaje']."','".$data['web_service']."','".$data['so']."','".$data['provider_data']."','".$data['database']."','".$data['environment']."')";
+        $query = "INSERT INTO $tabla (name,final_user,uso,url,conection_file,firms,attached_files,authentication_method,description,device,languaje,web_service,so,provider_data,database,environment,date) 
+                    VALUES ('".$data['name']."' ,'".$data['final_user']."', '".$data['uso']."','".$data['url']."', '".$data['conection_file']."', '".$data['firms']."','".$data['attached_files']."','".$data['authentication_method']."','".$data['description']."','".$data['device']."','".$data['languaje']."','".$data['web_service']."','".$data['so']."','".$data['provider_data']."','".$data['database']."','".$data['environment']."','".$data['date']."')";
 
         $bd->consultar($query);
 

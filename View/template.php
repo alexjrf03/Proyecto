@@ -36,9 +36,9 @@
 				$_GET["r"] == "update" ||
 				$_GET["r"] == "new_user" ||
 				$_GET["r"] == "listar_user" ||
-				$_GET["r"] == "modificar_user") {
+				$_GET["r"] == "modificar_user" ) {
 
-		      		if (($_GET["r"] == "new_user" || $_GET["r"] == "listar_user" || $_GET["r"] == "modificar_user") && $_SESSION['admin'] == 'f') {
+		      		if (($_GET["r"] == "new_user" || $_GET["r"] == "listar_user" || $_GET["r"] == "modificar_user" || $_GET["r"] == "update" ) && $_SESSION['admin'] == 'f') {
 
 		      			include "Module/acceso_denegado.php";
 

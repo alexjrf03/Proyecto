@@ -1,4 +1,5 @@
 <?php
+
 class AppController {
 
     static public function consultarApp($table,$item,$value){  
@@ -13,14 +14,16 @@ class AppController {
             
       if(isset($_POST['nombre_proveedor'])){
 
-        $database = $_POST['nombre_bd'].','.$_POST['status'].','.$_POST['servidor'].','.$_POST['descripcion-bd'];
-        $provider = $_POST['nombre_proveedor'].','.$_POST['phone'].','.$_POST['correo'];             
+        $database = $_POST['nombre_bd'].','.$_POST['select-bd'].','.$_POST['servidor'].','.$_POST['descripcion-bd'];
+        $provider = $_POST['nombre_proveedor'].','.$_POST['phone'].','.$_POST['correo'];
+        $date = date(DATE_RFC2822);
+        // funcion que detine programa: die();
         
-        if ($_POST['environment'] && $_POST['name']) {
+        if ($_POST['select-ambiente'] && $_POST['name']) {
 
                 $tabla='aplicacion';
                 
-                $data = array('environment' => $_POST['environment'],
+                $data = array('environment' => $_POST['select-ambiente'],
                               'name' => $_POST['name'],
                               'final_user' => $_POST['final_user'],
                               'url' => $_POST['url'],
@@ -35,7 +38,8 @@ class AppController {
                               'web_service' => $_POST['web_service'],
                               'so' => $_POST['so'],
                               'provider_data' => $provider,
-                              'database' => $database
+                              'database' => $database,
+                              'date' => $date
                             );             
                 
                 $resp = App::insertarApp($tabla, $data);

@@ -183,8 +183,8 @@
             <input type="hidden" name="id" value="'.trim($resp['id']).'">
             <button class="btn btn-success">actualizar</button>
         </div>';
-		// no necesario incrementar $resp ++;
-	}while($resp < 1);
+	   $resp ++;
+	} while ($resp < 1);
 	
 	$insertar = new AppController();
 	$insertar->update();

@@ -35,11 +35,18 @@
                             <td>'.$value['final_user'].'</td>
                             <td>'.$value['url'].'</td>
                             <td>'.$value['description'].'</td>
-                            <td>
-                                
+                            <td>';
+                            
+                            if ($_SESSION['admin'] == 't') {
+
+                                echo '
                                 <a class="btn btn-warning" href="index.php?r=update&id='.$value['id'].'">Editar</a>
 
-                                <a class="btn btn-danger" href="index.php?r=mostrar&id='.$value['id'].'">Eliminar</a>
+                                <a class="btn btn-info" href="index.php?r=mostrar&id='.$value['id'].'">Eliminar</a>';
+                            }
+
+                      echo '
+                                <a class="btn btn-danger" href="Extensions/tcpdf/pdf/reporte.php?facturaN='.$value['id'].'" target="_blank">PDF</a>
                             </td>
                         </tr'; 
                     }
