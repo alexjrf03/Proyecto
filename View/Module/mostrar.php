@@ -37,9 +37,9 @@
                             <td>'.$value['description'].'</td>
                             <td>
                                 
-                                <a class="btn btn-warning" href="index.php?r=update&id='.$value['id'].'"><i>editar</i></a>
+                                <a class="btn btn-warning" href="index.php?r=update&id='.$value['id'].'">Editar</a>
 
-                                <a class="btn btn-danger" href="index.php?r=mostrar&id='.$value['id'].'">eliminar</a>
+                                <a class="btn btn-danger" href="index.php?r=mostrar&id='.$value['id'].'">Eliminar</a>
                             </td>
                         </tr'; 
                     }
