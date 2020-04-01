@@ -6,12 +6,12 @@
         <h5 class="logo"> <a href="index.php">SGIA</a></h5>
         <?php 
             if ($_SESSION['admin'] == 't') {
-                echo '<a class="menu_form" href="index.php?r=listar_user">gestionar</a>
+                echo '<a class="menu_form" href="index.php?r=listar_user">Gestionar</a>
                     <a class="menu_form" href="index.php">Registrar</a>';
             }
         ?>
         <a class="menu_form" href="index.php?r=mostrar">Aplicaciones</a>
-        <a class="salir" href="View/Module/logout.php">salir</a>
+        <a class="salir" href="View/Module/logout.php">Salir</a>
     </div>
     </div>
     <div class="photo-text">
