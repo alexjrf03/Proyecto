@@ -46,7 +46,7 @@
                             }
 
                       echo '
-                                <a class="btn btn-danger" href="Extensions/tcpdf/pdf/reporte.php?facturaN='.$value['id'].'" target="_blank">PDF</a>
+                                <a class="btn btn-danger" href="View/Module/report/index.php?facturaN='.$value['id'].'" target="_blank">PDF</a>
                             </td>
                         </tr'; 
                     }
