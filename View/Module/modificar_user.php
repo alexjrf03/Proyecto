@@ -10,6 +10,9 @@
 	$value = $_GET['correo'];
             
 	$resp = LoginController::query($item,$value);
+
+	$active = $resp['estatus'] == 't' ? 'selected' : '';
+    $desactive = $resp['estatus'] == 'f' ? 'selected' : '';
                 	
 do{
 	echo'
@@ -25,10 +28,12 @@ do{
 			  <label for="surname">Password</label>
 			  <input type="password" class="form-control" name="pass" placeholder="nueva clave" required>
 			</div>
-
-			<div class="form-group col-md-6">
-			  <label for="address">Estatus</label>
-			  <input type="text" class="form-control" value="'.trim($resp['estatus']).'" name="estatus" placeholder="Dirección" required autofocus>
+			<div class="col-6" id="search">
+				<label for="estatus">Activar o desactivar:</label>
+				<select class="form-control" id="estatus" name="estatus">
+					<option value="t" '.$active.'>Activar</option>
+					<option value="f" '.$desactive.'>Desactivar</option>
+				</select> 
 			</div>
 
 		</div>

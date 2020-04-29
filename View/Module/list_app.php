@@ -18,7 +18,7 @@
                 do {
                     echo '
                         <section class="portafolio-item">
-                            <img src="https://unsplash.it/400/430?image=490" alt="" class="portafolio-img" />
+                            <img src="View/img/app.png" alt="" class="portafolio-img" />
                             <section class="portafolio-text">
                                 <h5>'.$aplicaciones[$i]['name'].'</h5>
                                 <p>'.$aplicaciones[$i]['description'].'</p>
