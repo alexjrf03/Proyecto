@@ -25,7 +25,7 @@
                 font-weight: bold
             }
             h3 {
-                color: blue;
+                color: blue; 
             }
         </style>
 
