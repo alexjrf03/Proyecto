@@ -25,13 +25,22 @@
 
     <div class="col-6">
         <div class="from-group">
-            <label for="servidor">Servidor de Base de Datos</label>
-            <input type="text" name="servidor" placeholder="Describa el Servidor" class="form-control input-form" required>
-        </div>
+            <label for="servidor">Manejador</label>
+            <input type="text" name="manejador" placeholder="Describa el manejador de la base de datos" class="form-control input-form" required>
+        </div> <br>
 
         <div class="from-group">
-            <br><label for="descripcion-bd">Descripción Base de Datos</label>
-            <textarea rows="3" name="descripcion-bd" class="form-control input-form" required></textarea>
-        </div>
+            <label for="servidor">Versión del Manejador</label>
+            <input type="text" name="version-manejador" placeholder="Describa la versión del manejador" class="form-control input-form" required>
+        </div> <br>
     </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <div class="from-group">
+            <label for="device-bd">Descripción de la Base de Datos</label>
+            <textarea rows="5" name="device-database" placeholder="" class="form-control input-form"></textarea>
+            </div>
+        </div>
 </div>
