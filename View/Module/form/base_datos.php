@@ -31,7 +31,7 @@
 
         <div class="from-group">
             <label for="servidor">Versión del Manejador</label>
-            <input type="text" name="version-manejador" placeholder="Describa la versión del manejador" class="form-control input-form" required>
+            <input type="text" name="version_manejador" placeholder="Describa la versión del manejador" class="form-control input-form" required>
         </div> <br>
     </div>
 </div>
@@ -40,7 +40,7 @@
     <div class="col-12">
         <div class="from-group">
             <label for="device-bd">Descripción de la Base de Datos</label>
-            <textarea rows="5" name="device-database" placeholder="" class="form-control input-form"></textarea>
+            <textarea rows="5" name="description_database" placeholder="" class="form-control input-form"></textarea>
             </div>
         </div>
 </div>

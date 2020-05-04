@@ -23,15 +23,15 @@ class AppController {
                 $date = date(DATE_RFC2822); //fecha actual
                 
                 $data_app = array(
-                    'name' => $_POST['name'],
-                    'final_user' => $_POST['final_user'],
+                    'nombre' => $_POST['name'],
+                    'usuario_final' => $_POST['final_user'],
                     'url' => $_POST['url'],
                     'uso' => $_POST['uso'],
-                    'conection_file' => $_POST['conection_file'],
-                    'firms' => $_POST['firms'],
-                    'attached_files' => $_POST['attached_files'],
-                    'authentication_method' => $_POST['authentication_method'],
-                    'description' => $_POST['description'],
+                    'archivo_conexion' => $_POST['conection_file'],
+                    'manejo_firma' => $_POST['firms'],
+                    'archivo_adjunto' => $_POST['attached_files'],
+                    'metodo_autenticacion' => $_POST['authentication_method'],
+                    'descripcion_app' => $_POST['description'],
                     'date' => $date,             
                 );
 
@@ -41,40 +41,46 @@ class AppController {
 
                   $data_lenguaje = array(
                     'app_id' => $app['max'],
-                    'languaje' => $_POST['languaje'],
+                    'nombre_lenguaje' => $_POST['nomb-leng'],
+                    'version' => $_POST['version-leng']
                   );
                   
                   $data_serviceWeb = array (
                     'app_id' => $app['max'],
-                    'web_service' => $_POST['web_service']
+                    'nombre_serviweb' => $_POST['web_service'],
+                    'version_serviweb' => $_POST['version-sw']
                   );
 
                   $data_so = array(
                     'app_id' => $app['max'],
-                    'so' => $_POST['so'],
+                    'nombre_so' => $_POST['so'],
+                    'version_so' => $_POST['version-so']
                   );
 
                   $data_env = array(
                     'app_id' => $app['max'],
-                    'environment' => $_POST['select-ambiente'],
+                    'nombre' => $_POST['select-ambiente'],
                   );
 
                   $data_device = array(
                     'app_id' => $app['max'],
-                    'device' => $_POST['device'],
+                    'nombre_disp' => $_POST['nomb-disp'],
+                    'descripcion_disp' => $_POST['device']
                   );
 
                   $data_db = array(
                     'app_id' => $app['max'],
-                    'nombre' => $_POST['nombre_bd'],
+                    'nombre_bd' => $_POST['nombre_bd'],
+                    'descripcion_bd' => $_POST['description_database'],
                     'estatus' => $_POST['select-bd'],
-                    'servidor' => $_POST['servidor'],
-                    'descripcion' => $_POST['descripcion-bd']
+                    'manejador_bd' => $_POST['manejador'],
+                    'version_bd' => $_POST['version_manejador']
+
                   );
 
                   $data_provider = array(
                     'app_id' => $app['max'],
-                    'nombre' => $_POST['nombre_proveedor'],
+                    'nombre_proveedor' => $_POST['nombre_proveedor'],
                     'telefono' => $_POST['phone'],
                     'correo' => $_POST['correo']
                   );
@@ -127,24 +133,21 @@ class AppController {
         
       if(isset($_POST['nombre_proveedor'])){
         
-        $database = $_POST['nombre_bd'].','.$_POST['status'].','.$_POST['servidor'].','.$_POST['descripcion-bd'];
-        $provider = $_POST['nombre_proveedor'].','.$_POST['phone'].','.$_POST['correo'];             
-        
         if($_POST['environment'] && $_POST['name']){
 
           $tabla='aplicacion';
           
           $data_app = array(
-              'name' => $_POST['name'],
-              'final_user' => $_POST['final_user'],
+              'nombre' => $_POST['name'],
+              'usuario_final' => $_POST['final_user'],
               'url' => $_POST['url'],
               'uso' => $_POST['uso'],
-              'conection_file' => $_POST['conection_file'],
-              'firms' => $_POST['firms'],
-              'attached_files' => $_POST['attached_files'],
-              'authentication_method' => $_POST['authentication_method'],
-              'description' => $_POST['description'],
-              'id' => $_POST['id']
+              'archivo_conexion' => $_POST['conection_file'],
+              'manejo_firma' => $_POST['firms'],
+              'archivo_adjunto' => $_POST['attached_files'],
+              'metodo_autenticacion' => $_POST['authentication_method'],
+              'descripcion_app' => $_POST['description'],
+              'app_id' => $_POST['id']
           );
 
           $data_lenguaje = array(

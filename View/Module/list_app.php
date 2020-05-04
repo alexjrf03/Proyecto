@@ -20,8 +20,8 @@
                         <section class="portafolio-item">
                             <img src="View/img/app.png" alt="" class="portafolio-img" />
                             <section class="portafolio-text">
-                                <h5>'.$aplicaciones[$i]['name'].'</h5>
-                                <p>'.$aplicaciones[$i]['description'].'</p>
+                                <h5>'.$aplicaciones[$i]['nombre'].'</h5>
+                                <p>'.$aplicaciones[$i]['descripcion_app'].'</p>
                             </section>
                         </section>';
                     $i++;

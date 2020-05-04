@@ -42,8 +42,14 @@ class App {
         $bd = new Conexion();
         $bd->conectar();
 
-        $sql = "INSERT INTO $tabla (name,final_user,uso,url,conection_file,firms,attached_files,authentication_method,description,date) 
-                    VALUES ('".$data['name']."' ,'".$data['final_user']."', '".$data['uso']."','".$data['url']."', '".$data['conection_file']."', '".$data['firms']."','".$data['attached_files']."','".$data['authentication_method']."','".$data['description']."','".$data['date']."')";
+        $sql = "INSERT INTO $tabla (
+                        'nombre','usuario_final','url','uso','archivo_conexion','manejo_firma',
+                        'archivo_adjunto','metodo_autenticacion','descripcion_app','date'
+                    ) 
+                    VALUES (
+                        '".$data['nombre']."' ,'".$data['usuario_final']."', '".$data['uso']."','".$data['url']."', '".$data['archivo_conexion']."',
+                        '".$data['manejo_firma']."','".$data['archivo_adjunto']."','".$data['metodo_autenticacion']."','".$data['descripcion_app']."','".$data['date']."'
+                    )";
 
         $query = $bd->consultar($sql);
 
@@ -61,7 +67,8 @@ class App {
         $bd=new Conexion();
         $bd->conectar();
 
-        $query="UPDATE $tabla SET name='".$data['name']."' ,final_user='".$data['final_user']."',uso='".$data['uso']."',url='".$data['url']."',conection_file='".$data['conection_file']."',firms='".$data['firms']."',attached_files='".$data['attached_files']."',authentication_method='".$data['authentication_method']."',description='".$data['description']."' WHERE id='".$data['id']."' ";
+        $query="UPDATE $tabla SET nombre='".$data['nombre']."' ,usuario_final='".$data['usuario_final']."',uso='".$data['uso']."',url='".$data['url']."',archivo_conexion='".$data['archivo_conexion']."',manejo_firma='".$data['manejo_firma']."',archivo_adjunto='".$data['archivo_adjunto']."',metodo_autenticacion='".$data['metodo_autenticacion']."',descripcion_app='".$data['descripcion_app']."' 
+                            WHERE app_id='".$data['app_id']."' ";
 
         $bd->consultar($query);
 
@@ -73,7 +80,7 @@ class App {
         $bd = new Conexion();
         $bd->conectar();
 
-        $query = "DELETE FROM $tabla WHERE id='".$data['id']."' ";
+        $query = "DELETE FROM $tabla WHERE app_id='".$data['id']."' ";
 
         $bd->consultar($query);
 
