@@ -27,9 +27,40 @@
                     $i++;
                 } while ($i <= 2);
 
+            } else if (count($aplicaciones) >= 2) {
+
+                echo '  <div class="container">
+                            <div class="row">
+                                <div class="col-6 text-center">
+                                    <img src="View/img/app.png" alt="" class="portafolio-img" />
+                                    <section class="portafolio-text">
+                                        <h5>'.$aplicaciones[0]['nombre'].'</h5>
+                                        <p>'.$aplicaciones[0]['descripcion_app'].'</p>
+                                    </section>
+                                </div> 
+                                <div class="col-6 text-center">
+                                    <img src="View/img/app.png" alt="" class="portafolio-img" />
+                                    <section class="portafolio-text">
+                                        <h5>'.$aplicaciones[0]['nombre'].'</h5>
+                                        <p>'.$aplicaciones[0]['descripcion_app'].'</p>
+                                    </section>
+                                </div> 
+                            </div>
+                        </div>';
             } else {
 
-                echo "<h1 class='text-center title-works'>hay solo ".count($aplicaciones)." registros</h1>";
+                echo '  <div class="container">
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <img src="View/img/app.png" alt="" class="portafolio-img" />
+                                    <section class="portafolio-text">
+                                        <h5>'.$aplicaciones[0]['nombre'].'</h5>
+                                        <p>'.$aplicaciones[0]['descripcion_app'].'</p>
+                                    </section>
+                                </div>  
+                            </div>
+                        </div>';
+
             }
 
         } else {
