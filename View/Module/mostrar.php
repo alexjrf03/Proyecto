@@ -40,8 +40,10 @@
                             if ($_SESSION['admin'] == 't') {
 
                                 echo '
+                                <script src="View/js/ajax.js"></script>
                                 <a class="btn btn-warning" href="index.php?r=update&id='.$value['id_app'].'">Editar</a>
-
+                                <input type="hidden" id="id_app" name="id_app" value="='.$value['id_app'].'"/>
+                                <button class="btn btn-warning" type="button" id="update">Modificar</button>
                                 <a class="btn btn-info" href="index.php?r=mostrar&id='.$value['id_app'].'">Eliminar</a>';
                             }
 

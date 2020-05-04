@@ -83,10 +83,6 @@
     <!-- script -->
     <script src="View/js/jquery-3.1.0.min.js"></script>
   	<script src="View/js/bootstrap.js"></script>
-    <script src="View/js/ajax.js"></script>
-    <script>
-        window.addEventListener('load', ajaxQ, false);
-    </script>
 
 </body>
 </html>
