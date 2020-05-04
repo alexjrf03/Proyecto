@@ -12,28 +12,31 @@
         <div class="from-group">
         
             <label for="name">Nombre</label>
-            <input type="text" name="name" placeholder="Ingresa Nombre" class="form-control input-form" required>
+            <input type="text" name="name-app" id="name-app" placeholder="Ingresa Nombre" class="form-control input-form" required>
         
         </div>
 
         <div class="from-group"> 
         
             <br><label for="usuario-final">Usuario Final</label>
-            <input type="text" name="final_user" placeholder="Usuario Final" class="form-control input-form" required>
+            <input type="text" name="final_user" id="final-user" placeholder="Usuario Final" class="form-control input-form" required>
         
         </div>
 
         <div class="from-group">
         
             <br><label for="url">URL</label>
-            <input type="text" name="url" placeholder="Ingresa URL" class="form-control input-form" required>
+            <input type="text" name="url" id="url" placeholder="Ingresa URL" class="form-control input-form" required>
         
         </div>
 
         <div class="from-group">
         
             <br><label for="uso">Uso</label>
-            <input type="text" name="uso" placeholder="Ingresa Uso" class="form-control input-form" required>
+            <select class="custom-select input-form" name="uso" id="uso">
+                <option value="true">Si</option>
+                <option value="false">No</option>
+            </select>
         
         </div>
 
@@ -44,22 +47,34 @@
 
         <div class="from-group">
             <label for="archivo-conex">Archivo de Conexión</label>
-            <input type="text" name="conection_file" placeholder="Ingresa Archivo Conexión" class="form-control input-form" required>
+            <select class="custom-select input-form" name="file-conect" id="file-conect">
+                <option value="true">Si</option>
+                <option value="false">No</option>
+            </select>
         </div> <br>
 
         <div class="from-group">
             <label for="firms">Manejo de Firmas</label>
-            <input type="text" name="firms" placeholder="Ingresa Manejo de Firmas" class="form-control input-form" required>
+            <select class="custom-select input-form" name="signature-management" id="signature-management">
+                <option value="true">Si</option>
+                <option value="false">No</option>
+            </select>
         </div>
 
         <div class="from-group">
             <br><label for="adjuntos">Archivos Adjuntos</label>
-            <input type="text" name="attached_files" placeholder="Ingresa Archivo Adjunto" class="form-control input-form" required>
+            <select class="custom-select input-form" name="attached-files" id="attached-files">
+                <option value="true">Si</option>
+                <option value="false">No</option>
+            </select>
         </div>
 
         <div class="from-group">
             <br><label for="autenticacion">Método de Autenticación</label>
-            <input type="text" name="authentication_method" placeholder="Describe Método de Autenticación" class="form-control input-form" required>
+            <select class="custom-select input-form" name="authentication-method" id="authentication-method">
+                <option value="true">Si</option>
+                <option value="false">No</option>
+            </select>
         </div>
     </div>
 </div>
@@ -69,7 +84,7 @@
     <div class="col-12">
         <div class="from-group">        
             <br><label for="mensaje">Descripción</label>
-            <textarea rows="5" name="description" class="form-control input-form" required></textarea>
+            <textarea rows="5" name="description-app" id="description-app" class="form-control input-form" required></textarea>
         </div> 
     </div>
 </div>
@@ -84,7 +99,7 @@
 
         <div class="from-group">
             <label for="nombre">Nombre</label>
-            <select class="custom-select input-form" name="nomb-leng" id="">
+            <select class="custom-select input-form" name="nomb-leng" id="nomb-leng">
                 <option value="seleccionar">Seleccionar..</option>
                 <option value="python">Python</option>
                 <option value="php">PHP</option>
@@ -102,7 +117,7 @@
         <div class="from-group">
         
             <br><label for="version">Versión</label>
-            <input type="text" name="version-leng" placeholder="Describe la versión del lenguaje" class="form-control input-form" required>
+            <input type="text" name="version-leng" id="version-leng" placeholder="Describe la versión del lenguaje" class="form-control input-form" required>
         
         </div>
     </div>
@@ -114,12 +129,12 @@
     
         <div class="from-group">
             <label for="nombre">Nombre</label>
-            <input type="text" name="web_service" placeholder="Ingresa el nombre del servidor web" class="form-control input-form" required>
+            <input type="text" name="web_service" id="web_service" placeholder="Ingresa el nombre del servidor web" class="form-control input-form" required>
         </div> <br>
 
         <div class="from-group">
             <label for="nombre">Versión</label>
-            <input type="text" name="version-sw" placeholder="Describe la versión del servidor web" class="form-control input-form" required>
+            <input type="text" name="version-sw" id="version-sw" placeholder="Describe la versión del servidor web" class="form-control input-form" required>
         </div>
     </div>
 </div>
@@ -131,12 +146,12 @@
     
         <div class="from-group">
             <label for="nombre">Nombre</label>
-            <input type="text" name="so" placeholder="Ingresa el nombre del sistema operativo" class="form-control input-form" required>
+            <input type="text" name="so" id="so" placeholder="Ingresa el nombre del sistema operativo" class="form-control input-form" required>
         </div> <br>
 
         <div class="from-group">
             <label for="nombre">Versión</label>
-            <input type="text" name="version-so" placeholder="Describe la versión del sistema operativo" class="form-control input-form" required>
+            <input type="text" name="version-so" id="version-so" placeholder="Describe la versión del sistema operativo" class="form-control input-form" required>
         </div>
     </div>
 
@@ -145,7 +160,7 @@
     <div class="col-4">
         <h4 class="titulo-form" id="registrar" data-ix="slowfade-scroll-bigs">Ambiente</h4>
         <label for="nombre">Estatus</label>
-        <select class="custom-select input-form" name="select-ambiente" id="">
+        <select class="custom-select input-form" name="select-ambiente" id="select-ambiente">
             <option value="seleccionar">Seleccionar..</option>
             <option value="desarrollo">Desarrollo</option>
             <option value="pruebas">Pruebas</option>
@@ -160,12 +175,12 @@
 
         <div class="from-group">
             <label for="nombre">Nombre</label>
-            <input type="text" name="nomb-disp" placeholder="Ingresa el nombre del Dispositivo" class="form-control input-form" required>
+            <input type="text" name="nomb-disp" id="nomb-disp" placeholder="Ingresa el nombre del Dispositivo" class="form-control input-form" required>
         </div> <br>
 
         <div class="from-group">
             <label for="device">Descripción</label>
-            <textarea rows="5" name="device" placeholder="" class="form-control input-form"></textarea>
+            <textarea rows="5" name="device" id="device" placeholder="" class="form-control input-form"></textarea>
         </div>
     </div>
 </div>

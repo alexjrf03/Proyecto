@@ -26,7 +26,10 @@
     <div class="col-6">
         <div class="from-group">
             <label for="servidor">Manejador</label>
-            <input type="text" name="manejador" placeholder="Describa el manejador de la base de datos" class="form-control input-form" required>
+            <select class="custom-select input-form" name="manejador" id="manejador">
+                <option value="1">Relacional</option>
+                <option value="2">No Relacional</option>
+            </select>
         </div> <br>
 
         <div class="from-group">
