@@ -47,7 +47,7 @@ class App {
                         'archivo_adjunto','metodo_autenticacion','descripcion_app','date'
                     ) 
                     VALUES (
-                        '".$data['nombre']."' ,'".$data['usuario_final']."', '".$data['uso']."','".$data['url']."', '".$data['archivo_conexion']."',
+                        '".$data['nombre']."' ,'".$data['usuario_final']."','".$data['uso']."','".$data['url']."', '".$data['archivo_conexion']."',
                         '".$data['manejo_firma']."','".$data['archivo_adjunto']."','".$data['metodo_autenticacion']."','".$data['descripcion_app']."','".$data['date']."'
                     )";
 

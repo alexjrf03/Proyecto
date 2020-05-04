@@ -13,25 +13,22 @@ class AppController {
     static public function create(){
             
       if(isset($_POST['nombre_proveedor'])){
-
-        print_r($_POST);
-        die();
         
-        if ($_POST['select-ambiente'] && $_POST['name']) {
+        if ($_POST['select-ambiente'] && $_POST['name-app']) {
 
                 $tabla='aplicacion';
                 $date = date(DATE_RFC2822); //fecha actual
                 
                 $data_app = array(
-                    'nombre' => $_POST['name'],
+                    'nombre' => $_POST['name-app'],
                     'usuario_final' => $_POST['final_user'],
                     'url' => $_POST['url'],
                     'uso' => $_POST['uso'],
-                    'archivo_conexion' => $_POST['conection_file'],
-                    'manejo_firma' => $_POST['firms'],
-                    'archivo_adjunto' => $_POST['attached_files'],
-                    'metodo_autenticacion' => $_POST['authentication_method'],
-                    'descripcion_app' => $_POST['description'],
+                    'archivo_conexion' => $_POST['file-conect'],
+                    'manejo_firma' => $_POST['signature-management'],
+                    'archivo_adjunto' => $_POST['attached-files'],
+                    'metodo_autenticacion' => $_POST['authentication-method'],
+                    'descripcion_app' => $_POST['description-app'],
                     'date' => $date,             
                 );
 

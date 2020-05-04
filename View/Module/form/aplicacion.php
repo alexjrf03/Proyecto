@@ -34,8 +34,8 @@
         
             <br><label for="uso">Uso</label>
             <select class="custom-select input-form" name="uso" id="uso">
-                <option value="true">Si</option>
-                <option value="false">No</option>
+                <option value="t">Si</option>
+                <option value="f">No</option>
             </select>
         
         </div>
@@ -48,32 +48,32 @@
         <div class="from-group">
             <label for="archivo-conex">Archivo de Conexión</label>
             <select class="custom-select input-form" name="file-conect" id="file-conect">
-                <option value="true">Si</option>
-                <option value="false">No</option>
+                <option value="t">Si</option>
+                <option value="f">No</option>
             </select>
         </div> <br>
 
         <div class="from-group">
             <label for="firms">Manejo de Firmas</label>
             <select class="custom-select input-form" name="signature-management" id="signature-management">
-                <option value="true">Si</option>
-                <option value="false">No</option>
+                <option value="t">Si</option>
+                <option value="f">No</option>
             </select>
         </div>
 
         <div class="from-group">
             <br><label for="adjuntos">Archivos Adjuntos</label>
             <select class="custom-select input-form" name="attached-files" id="attached-files">
-                <option value="true">Si</option>
-                <option value="false">No</option>
+                <option value="t">Si</option>
+                <option value="f">No</option>
             </select>
         </div>
 
         <div class="from-group">
             <br><label for="autenticacion">Método de Autenticación</label>
             <select class="custom-select input-form" name="authentication-method" id="authentication-method">
-                <option value="true">Si</option>
-                <option value="false">No</option>
+                <option value="t">Si</option>
+                <option value="f">No</option>
             </select>
         </div>
     </div>
