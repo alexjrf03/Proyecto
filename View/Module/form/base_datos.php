@@ -1,5 +1,5 @@
 <div class="container text-center">
-  <h4 class="titulo-form" id="registrar" data-ix="slowfade-scroll-bigs">
+  <h4 class="titulo-form" data-ix="slowfade-scroll-bigs">
    Base de datos
   </h4>
 </div>

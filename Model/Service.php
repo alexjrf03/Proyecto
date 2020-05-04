@@ -4,7 +4,7 @@ require_once 'Conexion.php';
 
 class Service {
 
-    static public $table = 'servidores';
+    static public $table = 'serviweb';
 
     static public function create($data) 
     {
@@ -13,13 +13,23 @@ class Service {
         $table = Service::$table;
 
         $sql = "INSERT INTO $table (
-                    web_service,app_id
+                    nombre_serviweb,version_serviweb
                 ) 
                 VALUES (
-                    '".$data['web_service']."','".$data['app_id']."'
+                    '".$data['nombre_serviweb']."','".$data['version_serviweb']."'
                 ) ";
 
         $db->consultar($sql);
+
+        // Extraer id
+        $sql_id = "SELECT MAX(id_serviweb) FROM $table";
+        $query_id = $db->consultar($sql_id);
+        $id =  $db->mostrar($query_id);
+
+        // Insert in the table pibot
+        $sql_inter = "INSERT INTO serviweb_app (id_serviweb,id_app) 
+                        VALUES ('".$id['max']."','".$data['app_id']."') ";
+        $db->consultar($sql_inter);
 
         return "ok";                              
     }
@@ -63,7 +73,7 @@ class Service {
         $table = Service::$table;
 
         $sql = "UPDATE $table SET 
-                    web_service='".$data['web_service']."', app_id='".$data['app_id']."'
+                    nombre_serviweb='".$data['nombre_serviweb']."', version_serviweb='".$data['version_serviweb']."'
                 WHERE app_id='".$data['app_id']."' ";
 
         $db->consultar($sql);

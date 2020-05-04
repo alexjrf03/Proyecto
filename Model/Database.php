@@ -4,7 +4,7 @@ require_once 'Conexion.php';
 
 class Database {
 
-    static public $table = 'database';
+    static public $table = 'tipo_bd';
 
     static public function create($data) 
     {
@@ -13,13 +13,23 @@ class Database {
         $table = Database::$table;
 
         $sql = "INSERT INTO $table (
-                    nombre,estatus,servidor,descripcion,app_id
+                    manejador_bd,version_bd
                 ) 
                 VALUES (
-                    '".$data['nombre']."','".$data['estatus']."','".$data['servidor']."','".$data['descripcion']."','".$data['app_id']."'
+                    '".$data['manejador_bd']."','".$data['version_bd']."'
                 ) ";
 
         $db->consultar($sql);
+
+        // Extraer id
+        $sql_id = "SELECT MAX(id_tbd) FROM $table";
+        $query_id = $db->consultar($sql_id);
+        $id =  $db->mostrar($query_id);
+
+        // Insert in the table pibot
+        $sql_inter = "INSERT INTO bd_app (id_tbd,id_app,nombre_bd,descripcion_bd,estatus) 
+                        VALUES ('".$id['max']."','".$data['app_id']."','".$data['nombre_bd']."','".$data['descripcion_bd']."','".$data['estatus']."') ";
+        $db->consultar($sql_inter);
 
         return "ok";                              
     }
@@ -63,7 +73,7 @@ class Database {
         $table = Database::$table;
 
         $sql = "UPDATE $table SET 
-                    nombre='".$data['nombre']."', estatus='".$data['estatus']."',
+                    nombre_bd='".$data['nombre_bd']."', estatus='".$data['estatus']."',
                     servidor='".$data['servidor']."', descripcion='".$data['descripcion']."'
                 WHERE app_id='".$data['app_id']."' ";
 

@@ -13,13 +13,23 @@ class Device {
         $table = Device::$table;
 
         $sql = "INSERT INTO $table (
-                    device,app_id
+                    nombre_disp,descripcion_disp
                 ) 
                 VALUES (
-                    '".$data['device']."','".$data['app_id']."'
+                    '".$data['nombre_disp']."','".$data['descripcion_disp']."'
                 ) ";
 
         $db->consultar($sql);
+
+        // Extraer id
+        $sql_id = "SELECT MAX(id_disp) FROM $table";
+        $query_id = $db->consultar($sql_id);
+        $id =  $db->mostrar($query_id);
+
+        // Insert in the table pibot
+        $sql_inter = "INSERT INTO dispositivo_app (id_disp,id_app) 
+                        VALUES ('".$id['max']."','".$data['app_id']."') ";
+        $db->consultar($sql_inter);
 
         return "ok";                              
     }
@@ -63,7 +73,7 @@ class Device {
         $table = Device::$table;
 
         $sql = "UPDATE $table SET 
-                    device='".$data['device']."', app_id='".$data['app_id']."'
+                    nombre_disp='".$data['nombre_disp']."', descripcion_disp='".$data['descripcion_disp']."'
                 WHERE app_id='".$data['app_id']."' ";
 
         $db->consultar($sql);

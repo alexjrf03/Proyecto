@@ -4,7 +4,7 @@ require_once 'Conexion.php';
 
 class Sistema {
 
-    static public $table = 'sistemas';
+    static public $table = 'so';
 
     static public function create($data) 
     {
@@ -13,13 +13,23 @@ class Sistema {
         $table = Sistema::$table;
 
         $sql = "INSERT INTO $table (
-                    so,app_id
+                    nombre_so,version_so
                 ) 
                 VALUES (
-                    '".$data['so']."','".$data['app_id']."'
+                    '".$data['nombre_so']."','".$data['version_so']."'
                 ) ";
 
         $db->consultar($sql);
+
+        // Extraer id
+        $sql_id = "SELECT MAX(id_so) FROM $table";
+        $query_id = $db->consultar($sql_id);
+        $id =  $db->mostrar($query_id);
+
+        // Insert in the table pibot
+        $sql_inter = "INSERT INTO so_app (id_so,id_app) 
+                        VALUES ('".$id['max']."','".$data['app_id']."') ";
+        $db->consultar($sql_inter);
 
         return "ok";                              
     }
@@ -63,7 +73,7 @@ class Sistema {
         $table = Sistema::$table;
 
         $sql = "UPDATE $table SET 
-                    so='".$data['so']."', app_id='".$data['app_id']."'
+                    nombre_so='".$data['nombre_so']."', version_so='".$data['version_so']."'
                 WHERE app_id='".$data['app_id']."' ";
 
         $db->consultar($sql);

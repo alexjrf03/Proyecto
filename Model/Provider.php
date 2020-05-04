@@ -4,7 +4,7 @@ require_once 'Conexion.php';
 
 class Provider {
 
-    static public $table = 'proveedores';
+    static public $table = 'proveedor';
 
     static public function create($data) 
     {
@@ -13,13 +13,23 @@ class Provider {
         $table = Provider::$table;
 
         $sql = "INSERT INTO $table (
-                    nombre,telefono,correo,app_id
+                    nombre_proveedor,telefono,correo
                 ) 
                 VALUES (
-                    '".$data['nombre']."','".$data['telefono']."','".$data['correo']."','".$data['app_id']."'
+                    '".$data['nombre_proveedor']."','".$data['telefono']."','".$data['correo']."'
                 ) ";
 
         $db->consultar($sql);
+
+        // Extraer id
+        $sql_id = "SELECT MAX(id_proveedor) FROM $table";
+        $query_id = $db->consultar($sql_id);
+        $id =  $db->mostrar($query_id);
+
+        // Insert in the table pibot
+        $sql_inter = "INSERT INTO proveedor_app (id_proveedor,id_app) 
+                        VALUES ('".$id['max']."','".$data['app_id']."') ";
+        $db->consultar($sql_inter);
 
         return "ok";                              
     }
@@ -63,7 +73,7 @@ class Provider {
         $table = Provider::$table;
 
         $sql = "UPDATE $table SET 
-                    nombre='".$data['nombre']."', telefono='".$data['telefono']."',
+                    nombre_proveedor='".$data['nombre_proveedor']."', telefono='".$data['telefono']."',
                     correo='".$data['correo']."'
                 WHERE app_id='".$data['app_id']."' ";
 

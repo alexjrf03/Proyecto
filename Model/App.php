@@ -51,7 +51,7 @@ class App {
                         '".$data['manejo_firma']."','".$data['archivo_adjunto']."','".$data['metodo_autenticacion']."','".$data['descripcion_app']."','".$data['date']."'
                     )";
 
-        $query = $bd->consultar($sql);
+        $bd->consultar($sql);
 
         $sql_id = "SELECT MAX(app_id) FROM $tabla";
 

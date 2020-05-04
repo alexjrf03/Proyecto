@@ -1,5 +1,5 @@
 <div class="container text-center contenedor-form">
-  <h4 class="first-titulo-form" id="registrar" data-ix="slowfade-scroll-bigs">
+  <h4 class="first-titulo-form" data-ix="slowfade-scroll-bigs">
    Aplicacion
   </h4>
 </div>
@@ -94,7 +94,7 @@
 <div class="row">
     <div class="col-6">
 
-        <h4 class="titulo-form" id="registrar" data-ix="slowfade-scroll-bigs">Lenguaje</h4>
+        <h4 class="titulo-form" data-ix="slowfade-scroll-bigs">Lenguaje</h4>
 
 
         <div class="from-group">
@@ -125,7 +125,7 @@
     <!-- FORM SERVIDOR WEB -->
 
     <div class="col-6">
-        <h4 class="titulo-form" id="registrar" data-ix="slowfade-scroll-bigs">Servidor Web</h4>
+        <h4 class="titulo-form" data-ix="slowfade-scroll-bigs">Servidor Web</h4>
     
         <div class="from-group">
             <label for="nombre">Nombre</label>
@@ -142,7 +142,7 @@
 <!-- FORM SISTEMA OPERATIVO -->
 <div class="row">
     <div class="col-4">
-    <h4 class="titulo-form" id="registrar" data-ix="slowfade-scroll-bigs">Sistema Operativo</h4>
+    <h4 class="titulo-form" data-ix="slowfade-scroll-bigs">Sistema Operativo</h4>
     
         <div class="from-group">
             <label for="nombre">Nombre</label>
@@ -158,7 +158,7 @@
 <!-- FORM AMBIENTE -->
 
     <div class="col-4">
-        <h4 class="titulo-form" id="registrar" data-ix="slowfade-scroll-bigs">Ambiente</h4>
+        <h4 class="titulo-form" data-ix="slowfade-scroll-bigs">Ambiente</h4>
         <label for="nombre">Estatus</label>
         <select class="custom-select input-form" name="select-ambiente" id="select-ambiente">
             <option value="seleccionar">Seleccionar..</option>
@@ -171,7 +171,7 @@
 <!-- FORM DISPOSITIVO -->
 
     <div class="col-4">
-    <h4 class="titulo-form" id="registrar" data-ix="slowfade-scroll-bigs">Dispositivo</h4>
+    <h4 class="titulo-form" data-ix="slowfade-scroll-bigs">Dispositivo</h4>
 
         <div class="from-group">
             <label for="nombre">Nombre</label>

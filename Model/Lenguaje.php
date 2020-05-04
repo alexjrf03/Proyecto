@@ -4,7 +4,7 @@ require_once 'Conexion.php';
 
 class Lenguaje {
 
-    static public $table = 'lenguajes';
+    static public $table = 'lenguaje';
 
     static public function create($data) 
     {
@@ -13,13 +13,23 @@ class Lenguaje {
         $table = Lenguaje::$table;
 
         $sql = "INSERT INTO $table (
-                    languaje,app_id
+                    nombre_lenguaje, version
                 ) 
                 VALUES (
-                    '".$data['languaje']."','".$data['app_id']."'
+                    '".$data['nombre_lenguaje']."','".$data['version']."'
                 ) ";
 
         $db->consultar($sql);
+
+        // Extraer id
+        $sql_id = "SELECT MAX(id_lenguaje) FROM $table";
+        $query_id = $db->consultar($sql_id);
+        $id =  $db->mostrar($query_id);
+
+        // Insert in the table pibot
+        $sql_inter = "INSERT INTO lenguaje_app (id_lenguaje,id_app) 
+                        VALUES ('".$id['max']."','".$data['app_id']."') ";
+        $db->consultar($sql_inter);
 
         return "ok";                              
     }
@@ -63,7 +73,7 @@ class Lenguaje {
         $table = Lenguaje::$table;
 
         $sql = "UPDATE $table SET 
-                    languaje='".$data['languaje']."', app_id='".$data['app_id']."'
+                    nombre_lenguaje='".$data['nombre_lenguaje']."', version='".$data['version']."'
                 WHERE app_id='".$data['app_id']."' ";
 
         $db->consultar($sql);

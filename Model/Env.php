@@ -4,7 +4,7 @@ require_once 'Conexion.php';
 
 class Env {
 
-    static public $table = 'ambientes';
+    static public $table = 'ambiente';
 
     static public function create($data) 
     {
@@ -13,13 +13,23 @@ class Env {
         $table = Env::$table;
 
         $sql = "INSERT INTO $table (
-                    environment,app_id
+                    nombre
                 ) 
                 VALUES (
-                    '".$data['environment']."','".$data['app_id']."'
+                    '".$data['nombre']."'
                 ) ";
 
         $db->consultar($sql);
+
+        // Extraer id
+        $sql_id = "SELECT MAX(id_amb) FROM $table";
+        $query_id = $db->consultar($sql_id);
+        $id =  $db->mostrar($query_id);
+
+        // Insert in the table pibot
+        $sql_inter = "INSERT INTO ambiente_app (id_amb,id_app) 
+                        VALUES ('".$id['max']."','".$data['app_id']."') ";
+        $db->consultar($sql_inter);
 
         return "ok";                              
     }
@@ -63,7 +73,7 @@ class Env {
         $table = Env::$table;
 
         $sql = "UPDATE $table SET 
-                    environment='".$data['environment']."', app_id='".$data['app_id']."'
+                    nombre='".$data['nombre']."'
                 WHERE app_id='".$data['app_id']."' ";
 
         $db->consultar($sql);
