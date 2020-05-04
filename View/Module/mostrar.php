@@ -31,22 +31,22 @@
                       echo '
                         <tr>
                             <th scope="row">'.($key+1).'</th>
-                            <td>'.$value['name'].'</td>
-                            <td>'.$value['final_user'].'</td>
+                            <td>'.$value['nombre'].'</td>
+                            <td>'.$value['usuario_final'].'</td>
                             <td>'.$value['url'].'</td>
-                            <td>'.$value['description'].'</td>
+                            <td>'.$value['descripcion_app'].'</td>
                             <td>';
                             
                             if ($_SESSION['admin'] == 't') {
 
                                 echo '
-                                <a class="btn btn-warning" href="index.php?r=update&id='.$value['id'].'">Editar</a>
+                                <a class="btn btn-warning" href="index.php?r=update&id='.$value['id_app'].'">Editar</a>
 
-                                <a class="btn btn-info" href="index.php?r=mostrar&id='.$value['id'].'">Eliminar</a>';
+                                <a class="btn btn-info" href="index.php?r=mostrar&id='.$value['id_app'].'">Eliminar</a>';
                             }
 
                       echo '
-                                <a class="btn btn-danger" href="View/Module/report/index.php?facturaN='.$value['id'].'" target="_blank">PDF</a>
+                                <a class="btn btn-danger" href="View/Module/report/index.php?facturaN='.$value['id_app'].'" target="_blank">PDF</a>
                             </td>
                         </tr'; 
                     }

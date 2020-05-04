@@ -58,8 +58,8 @@
                     </tr>
                         
                     <tr>
-                        <td>'.$app['name'].'</td>
-                        <td>'.$app['final_user'].'</td>
+                        <td>'.$app['nombre'].'</td>
+                        <td>'.$app['usuario_final'].'</td>
                         <td>'.$app['url'].'</td>
                         <td>'.$app['uso'].'</td>
                     </tr> 
@@ -72,10 +72,10 @@
                     </tr>
 
                     <tr>
-                        <td>'.$app['conection_file'].'</td>
-                        <td>'.$app['firms'].'</td>
-                        <td>'.$app['attached_files'].'</td>
-                        <td>'.$app['authentication_method'].'</td>
+                        <td>'.$app['archivo_conexion'].'</td>
+                        <td>'.$app['manejo_firma'].'</td>
+                        <td>'.$app['archivo_adjunto'].'</td>
+                        <td>'.$app['metodo_autenticacion'].'</td>
                     </tr> 
 
                     <tr>
@@ -83,7 +83,7 @@
                     </tr>
 
                     <tr>
-                        <td colspan="4">'.$app['description'].'</td>
+                        <td colspan="4">'.$app['descripcion_app'].'</td>
                     </tr>
                         
                 </table>';

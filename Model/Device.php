@@ -4,7 +4,7 @@ require_once 'Conexion.php';
 
 class Device {
 
-    static public $table = 'dispositivos';
+    static public $table = 'dispositivo';
 
     static public function create($data) 
     {

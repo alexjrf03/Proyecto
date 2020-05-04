@@ -77,7 +77,7 @@ class AppController {
 
                   $data_provider = array(
                     'app_id' => $app['max'],
-                    'nombre_proveedor' => $_POST['nombre_proveedor'],
+                    'nombre_proveedor' => trim($_POST['nombre_proveedor']),
                     'telefono' => $_POST['phone'],
                     'correo' => $_POST['correo']
                   );
@@ -135,59 +135,64 @@ class AppController {
           $tabla='aplicacion';
           
           $data_app = array(
-              'nombre' => $_POST['name'],
+              'nombre' => $_POST['name-app'],
               'usuario_final' => $_POST['final_user'],
               'url' => $_POST['url'],
               'uso' => $_POST['uso'],
-              'archivo_conexion' => $_POST['conection_file'],
-              'manejo_firma' => $_POST['firms'],
-              'archivo_adjunto' => $_POST['attached_files'],
-              'metodo_autenticacion' => $_POST['authentication_method'],
-              'descripcion_app' => $_POST['description'],
+              'archivo_conexion' => $_POST['file-conect'],
+              'manejo_firma' => $_POST['signature-management'],
+              'archivo_adjunto' => $_POST['attached-files'],
+              'metodo_autenticacion' => $_POST['authentication-method'],
+              'descripcion_app' => $_POST['description-app'],
               'app_id' => $_POST['id']
           );
 
           $data_lenguaje = array(
             'app_id' => $_POST['id'],
-            'languaje' => $_POST['languaje'],
+            'nombre_lenguaje' => $_POST['nomb-leng'],
+            'version' => $_POST['version-leng']
           );
           
           $data_serviceWeb = array (
             'app_id' => $_POST['id'],
-            'web_service' => $_POST['web_service']
+            'nombre_serviweb' => $_POST['web_service'],
+            'version_serviweb' => $_POST['version-sw']
           );
 
           $data_so = array(
             'app_id' => $_POST['id'],
-            'so' => $_POST['so'],
+            'nombre_so' => $_POST['so'],
+            'version_so' => $_POST['version-so']
           );
 
           $data_env = array(
             'app_id' => $_POST['id'],
-            'environment' => $_POST['select-ambiente'],
+            'nombre' => $_POST['select-ambiente'],
           );
 
           $data_device = array(
             'app_id' => $_POST['id'],
-            'device' => $_POST['device'],
+            'nombre_disp' => $_POST['nomb-disp'],
+            'descripcion_disp' => $_POST['device']
           );
 
           $data_db = array(
             'app_id' => $_POST['id'],
-            'nombre' => $_POST['nombre_bd'],
+            'nombre_bd' => $_POST['nombre_bd'],
+            'descripcion_bd' => $_POST['description_database'],
             'estatus' => $_POST['select-bd'],
-            'servidor' => $_POST['servidor'],
-            'descripcion' => $_POST['descripcion-bd']
+            'manejador_bd' => $_POST['manejador'],
+            'version_bd' => $_POST['version_manejador']
           );
 
           $data_provider = array(
             'app_id' => $_POST['id'],
-            'nombre' => $_POST['nombre_proveedor'],
+            'nombre_proveedor' => trim($_POST['nombre_proveedor']),
             'telefono' => $_POST['phone'],
             'correo' => $_POST['correo']
           );
 
-          $app = App::updateApp($tabla, $data);
+          $app = App::updateApp($tabla, $data_app);
           $lenguaje = Lenguaje::update($data_lenguaje);
           $serviceWeb = Service::update($data_serviceWeb);
           $so = Sistema::update($data_so);

@@ -13,7 +13,7 @@ use Spipu\Html2Pdf\Html2Pdf;
 
 $item = 'app_id';
 
-$app = App::consultarApp('aplicacion','id',$_GET['facturaN']);
+$app = App::consultarApp('aplicacion','id_app',$_GET['facturaN']);
 // $lenguaje = Lenguaje::read($item, $app->id);
 // $serviceWeb = Service::read($item, $app->id);
 // $so = Sistema::read($item, $app->id);
@@ -29,6 +29,6 @@ $html = ob_get_clean();
 $html2pdf = new Html2Pdf('P','420','es','true','UTF-8');
 $html2pdf->writeHTML($html);
 $html2pdf->setDefaultFont('Arial');
-$html2pdf->output('pdf_aplicacion_'.$app['name'].'.pdf');
+$html2pdf->output('pdf_aplicacion_'.$app['nombre'].'.pdf');
 
 ?>

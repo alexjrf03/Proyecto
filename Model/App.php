@@ -43,17 +43,17 @@ class App {
         $bd->conectar();
 
         $sql = "INSERT INTO $tabla (
-                        'nombre','usuario_final','url','uso','archivo_conexion','manejo_firma',
-                        'archivo_adjunto','metodo_autenticacion','descripcion_app','date'
+                        nombre,usuario_final,url,uso,archivo_conexion,manejo_firma,
+                        archivo_adjunto,metodo_autenticacion,descripcion_app,date
                     ) 
                     VALUES (
-                        '".$data['nombre']."' ,'".$data['usuario_final']."','".$data['uso']."','".$data['url']."', '".$data['archivo_conexion']."',
+                        '".$data['nombre']."' ,'".$data['usuario_final']."','".$data['url']."','".$data['uso']."','".$data['archivo_conexion']."',
                         '".$data['manejo_firma']."','".$data['archivo_adjunto']."','".$data['metodo_autenticacion']."','".$data['descripcion_app']."','".$data['date']."'
                     )";
 
         $bd->consultar($sql);
 
-        $sql_id = "SELECT MAX(app_id) FROM $tabla";
+        $sql_id = "SELECT MAX(id_app) FROM $tabla";
 
         $query_id = $bd->consultar($sql_id);
         $app =  $bd->mostrar($query_id);
