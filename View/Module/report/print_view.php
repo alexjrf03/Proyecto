@@ -88,7 +88,13 @@
                         
                 </table>';
 
-                
+                print_r($lenguaje);
+                print_r($serviceWeb);
+                print_r($so);
+                print_r($env);
+                print_r($device);
+                print_r($db);
+                print_r($provider);
 
             ?>
 

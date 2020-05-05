@@ -72,8 +72,9 @@
 				include "Module/".$_GET["r"].".php";				
 			} elseif ($_GET["r"] == "change_password") {
 				include "Module/change_password.php";
+			} else {
+				include 'Module/login.php';
 			}
-
 		} else {
 			// si no existe una variable de sesión iniciada o activa incluye el login
 			include 'Module/login.php';
@@ -82,7 +83,8 @@
 ?>
     <!-- script -->
     <script src="View/js/jquery-3.1.0.min.js"></script>
-  	<script src="View/js/bootstrap.js"></script>
+	<script src="View/js/bootstrap.js"></script>
+	<script src="View/js/ajax.js"></script>
 
 </body>
 </html>

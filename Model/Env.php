@@ -13,7 +13,7 @@ class Env {
         $table = Env::$table;
 
         $sql = "INSERT INTO $table (
-                    nombre
+                    nombre_env
                 ) 
                 VALUES (
                     '".$data['nombre']."'
@@ -42,7 +42,14 @@ class Env {
             
             $db = new Conexion();
             $db->conectar();
-            $sql = "SELECT * FROM $table WHERE $item = '$value'";
+
+            // For tables intermedias, query all data.
+            $sql ="SELECT * 
+            FROM $item A 
+                INNER JOIN ambiente_app AA ON A.id_app = AA.id_app
+                INNER JOIN $table AM ON AA.id_amb = AM.id_amb
+            WHERE AA.id_app = $value";
+
             $query = $db->consultar($sql);	
             $row = $db->mostrar($query);
             return $row;
@@ -73,8 +80,8 @@ class Env {
         $table = Env::$table;
 
         $sql = "UPDATE $table SET 
-                    nombre='".$data['nombre']."'
-                WHERE app_id='".$data['app_id']."' ";
+                    nombre_env='".$data['nombre']."'
+                WHERE id_amb='".$data['id_amb']."' ";
 
         $db->consultar($sql);
 

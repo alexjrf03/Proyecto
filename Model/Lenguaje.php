@@ -42,7 +42,14 @@ class Lenguaje {
             
             $db = new Conexion();
             $db->conectar();
-            $sql = "SELECT * FROM $table WHERE $item = '$value'";
+
+            // For tables intermedias, query all data.
+            $sql ="SELECT * 
+                FROM $item A
+                    INNER JOIN lenguaje_app LA ON A.id_app = LA.id_app
+                    INNER JOIN $table L ON LA.id_lenguaje = L.id_lenguaje
+                WHERE LA.id_app = $value";
+
             $query = $db->consultar($sql);	
             $row = $db->mostrar($query);
             return $row;
@@ -74,7 +81,7 @@ class Lenguaje {
 
         $sql = "UPDATE $table SET 
                     nombre_lenguaje='".$data['nombre_lenguaje']."', version='".$data['version']."'
-                WHERE app_id='".$data['app_id']."' ";
+                WHERE id_lenguaje='".$data['id_lenguaje']."' ";
 
         $db->consultar($sql);
 

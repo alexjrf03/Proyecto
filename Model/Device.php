@@ -42,7 +42,13 @@ class Device {
             
             $db = new Conexion();
             $db->conectar();
-            $sql = "SELECT * FROM $table WHERE $item = '$value'";
+
+            $sql ="SELECT * 
+            FROM $item A 
+                INNER JOIN dispositivo_app DA ON A.id_app = DA.id_app
+                INNER JOIN $table D ON DA.id_disp = D.id_disp
+            WHERE DA.id_app = $value";
+
             $query = $db->consultar($sql);	
             $row = $db->mostrar($query);
             return $row;
@@ -74,7 +80,7 @@ class Device {
 
         $sql = "UPDATE $table SET 
                     nombre_disp='".$data['nombre_disp']."', descripcion_disp='".$data['descripcion_disp']."'
-                WHERE app_id='".$data['app_id']."' ";
+                WHERE id_disp='".$data['id_disp']."' ";
 
         $db->consultar($sql);
 

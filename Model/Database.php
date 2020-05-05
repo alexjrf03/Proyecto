@@ -42,9 +42,17 @@ class Database {
             
             $db = new Conexion();
             $db->conectar();
-            $sql = "SELECT * FROM $table WHERE $item = '$value'";
+
+            // For tables intermedias, query all data.
+            $sql ="SELECT * 
+            FROM $item A
+                INNER JOIN bd_app BDA ON A.id_app = BDA.id_app
+                INNER JOIN $table TBD ON BDA.id_tbd = TBD.id_tbd
+            WHERE BDA.id_app = $value";
+
             $query = $db->consultar($sql);	
             $row = $db->mostrar($query);
+            
             return $row;
  
         } else {
@@ -71,13 +79,19 @@ class Database {
         $db = new Conexion();
         $db->conectar();
         $table = Database::$table;
-
+        
         $sql = "UPDATE $table SET 
-                    nombre_bd='".$data['nombre_bd']."', estatus='".$data['estatus']."',
-                    servidor='".$data['servidor']."', descripcion='".$data['descripcion']."'
-                WHERE app_id='".$data['app_id']."' ";
+                    manejador_bd='".$data['manejador_bd']."', version_bd='".$data['version_bd']."'
+                WHERE id_tbd='".$data['id_tbd']."' ";
 
         $db->consultar($sql);
+
+        // update in the table pibot
+        $sql_inter = "UPDATE bd_app SET 
+                        nombre_bd='".$data['nombre_bd']."', descripcion_bd='".$data['descripcion_bd']."',estatus='".$data['estatus']."'
+                    WHERE id_bd='".$data['id_bd']."' ";
+
+        $db->consultar($sql_inter);
 
         return "ok";
     }

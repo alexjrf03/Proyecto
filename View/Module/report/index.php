@@ -11,16 +11,17 @@ require '../../../Model/Sistema.php';
 
 use Spipu\Html2Pdf\Html2Pdf;
 
-$item = 'app_id';
+$item = 'aplicacion';
+$value = $_GET['facturaN'];
 
-$app = App::consultarApp('aplicacion','id_app',$_GET['facturaN']);
-// $lenguaje = Lenguaje::read($item, $app->id);
-// $serviceWeb = Service::read($item, $app->id);
-// $so = Sistema::read($item, $app->id);
-// $env = Env::read($item, $app->id);
-// $device = Device::read($item, $app->id);
-// $db = Database::read($item, $app->id);
-// $provider = Provider::read($item, $app->id);
+$app = App::consultarApp($item,'id_app',$value);
+$lenguaje = Lenguaje::read($item,$value);
+$serviceWeb = Service::read($item,$value);
+$so = Sistema::read($item,$value);
+$env = Env::read($item,$value);
+$device = Device::read($item,$value);
+$db = Database::read($item,$value);
+$provider = Provider::read($item,$value);
 
 ob_start();
 require_once 'print_view.php';

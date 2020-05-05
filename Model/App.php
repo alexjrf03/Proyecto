@@ -10,9 +10,9 @@ class App {
 	    	$db->conectar();
 
             $sql = "SELECT * FROM $table WHERE $item = $value";
+
             $result = $db->consultar($sql);
             $resp = $db->mostrar($result);
-
             return $resp;
  
         } else {
@@ -26,8 +26,8 @@ class App {
 
             do {
 
-                $proveedores = $db->mostrar($result);
-                array_push($ar,$proveedores);
+                $aplicaciones = $db->mostrar($result);
+                array_push($ar,$aplicaciones);
                 $total--; 
 
             } while ($total>0);
@@ -68,7 +68,7 @@ class App {
         $bd->conectar();
 
         $query="UPDATE $tabla SET nombre='".$data['nombre']."' ,usuario_final='".$data['usuario_final']."',uso='".$data['uso']."',url='".$data['url']."',archivo_conexion='".$data['archivo_conexion']."',manejo_firma='".$data['manejo_firma']."',archivo_adjunto='".$data['archivo_adjunto']."',metodo_autenticacion='".$data['metodo_autenticacion']."',descripcion_app='".$data['descripcion_app']."' 
-                            WHERE app_id='".$data['app_id']."' ";
+                            WHERE id_app='".$data['app_id']."' ";
 
         $bd->consultar($query);
 
@@ -80,7 +80,7 @@ class App {
         $bd = new Conexion();
         $bd->conectar();
 
-        $query = "DELETE FROM $tabla WHERE app_id='".$data['id']."' ";
+        $query = "DELETE FROM $tabla WHERE id_app='".$data['id']."' ";
 
         $bd->consultar($query);
 

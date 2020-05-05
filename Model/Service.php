@@ -42,7 +42,14 @@ class Service {
             
             $db = new Conexion();
             $db->conectar();
-            $sql = "SELECT * FROM $table WHERE $item = '$value'";
+
+            // For tables intermedias, query all data.
+            $sql ="SELECT * 
+            FROM $item A
+                INNER JOIN serviweb_app SA ON A.id_app = SA.id_app
+                INNER JOIN $table S ON SA.id_serviweb = S.id_serviweb
+            WHERE SA.id_app = $value";
+
             $query = $db->consultar($sql);	
             $row = $db->mostrar($query);
             return $row;
@@ -74,7 +81,7 @@ class Service {
 
         $sql = "UPDATE $table SET 
                     nombre_serviweb='".$data['nombre_serviweb']."', version_serviweb='".$data['version_serviweb']."'
-                WHERE app_id='".$data['app_id']."' ";
+                WHERE id_serviweb='".$data['id_serviweb']."' ";
 
         $db->consultar($sql);
 

@@ -42,7 +42,14 @@ class Sistema {
             
             $db = new Conexion();
             $db->conectar();
-            $sql = "SELECT * FROM $table WHERE $item = '$value'";
+
+            // For tables intermedias, query all data.
+            $sql ="SELECT * 
+            FROM $item A
+                INNER JOIN so_app SOA ON A.id_app = SOA.id_app
+                INNER JOIN $table S ON SOA.id_so = S.id_so
+            WHERE SOA.id_app = $value";
+
             $query = $db->consultar($sql);	
             $row = $db->mostrar($query);
             return $row;
@@ -74,7 +81,7 @@ class Sistema {
 
         $sql = "UPDATE $table SET 
                     nombre_so='".$data['nombre_so']."', version_so='".$data['version_so']."'
-                WHERE app_id='".$data['app_id']."' ";
+                WHERE id_so='".$data['id_so']."' ";
 
         $db->consultar($sql);
 

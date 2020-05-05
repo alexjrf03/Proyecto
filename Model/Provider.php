@@ -42,7 +42,14 @@ class Provider {
             
             $db = new Conexion();
             $db->conectar();
-            $sql = "SELECT * FROM $table WHERE $item = '$value'";
+
+            // For tables intermedias, query all data.
+            $sql ="SELECT * 
+            FROM $item A
+                INNER JOIN proveedor_app PA ON A.id_app = PA.id_app
+                INNER JOIN $table P ON PA.id_proveedor = P.id_proveedor
+            WHERE PA.id_app = $value";
+
             $query = $db->consultar($sql);	
             $row = $db->mostrar($query);
             return $row;
@@ -75,7 +82,7 @@ class Provider {
         $sql = "UPDATE $table SET 
                     nombre_proveedor='".$data['nombre_proveedor']."', telefono='".$data['telefono']."',
                     correo='".$data['correo']."'
-                WHERE app_id='".$data['app_id']."' ";
+                WHERE id_proveedor='".$data['id_proveedor']."' ";
 
         $db->consultar($sql);
 
